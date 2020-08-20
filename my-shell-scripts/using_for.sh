@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sentence="shell script usando estrutura repetição for terminal"
+sentence=$@
 
 for word in $sentence; do
   sleep 0.3

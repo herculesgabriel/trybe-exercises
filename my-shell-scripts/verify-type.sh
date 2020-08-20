@@ -1,20 +1,25 @@
 #!/bin/bash
 
-echo "Digite o caminho desejado"
+paths=$@
 
-if [ -e $1 ]; then
+for path_to_verify in $paths; do
 
-  if [ -d $1 ]; then
-    echo $1 "é um diretório"
-  elif [ -f $1 ]; then
-    echo $1 "é um arquivo comum"
+  if [ -e $path_to_verify ]; then
+
+    if [ -d $path_to_verify ]; then
+      echo "'$path_to_verify' é um diretório"
+    elif [ -f $path_to_verify ]; then
+      echo "'$path_to_verify' é um arquivo comum"
+    else
+      echo "'$path_to_verify' não é nem um diretório nem um arquivo comum"
+    fi
+
   else
-    echo $1 "não é nem um diretório nem um arquivo comum"
+    echo "O caminho '$path_to_verify' é inválido"
   fi
+  sleep 0.2
 
-else
-  echo "O caminho $1 é inválido"
-fi
+done
 
 sleep 2
 

@@ -6,11 +6,11 @@ read file_path
 if [ -e $file_path ]; then
 
   if [ -d $file_path ]; then
-    $file_path "é um diretório"
+    echo $file_path "é um diretório"
   elif [ -f $file_path ]; then
-    $file_path "é um arquivo comum"
+    echo $file_path "é um arquivo comum"
   else
-    $file_path "não é nem um diretório nem um arquivo comum"
+    echo $file_path "não é nem um diretório nem um arquivo comum"
   fi
 
 else

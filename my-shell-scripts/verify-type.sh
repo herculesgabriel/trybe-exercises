@@ -1,20 +1,19 @@
 #!/bin/bash
 
 echo "Digite o caminho desejado"
-read file_path
 
-if [ -e $file_path ]; then
+if [ -e $1 ]; then
 
-  if [ -d $file_path ]; then
-    echo $file_path "é um diretório"
-  elif [ -f $file_path ]; then
-    echo $file_path "é um arquivo comum"
+  if [ -d $1 ]; then
+    echo $1 "é um diretório"
+  elif [ -f $1 ]; then
+    echo $1 "é um arquivo comum"
   else
-    echo $file_path "não é nem um diretório nem um arquivo comum"
+    echo $1 "não é nem um diretório nem um arquivo comum"
   fi
 
 else
-  echo "O caminho informado é inválido"
+  echo "O caminho $1 é inválido"
 fi
 
 sleep 2

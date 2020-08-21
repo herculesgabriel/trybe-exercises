@@ -1,4 +1,5 @@
 # Git & Github
+Ps.: page under development
 
 ## Instaling Git
 
@@ -258,7 +259,7 @@ code
 ```
 
 
-## Example Situations
+## Example Situation
 ```
 # beginning of repository
 mkdir rebase-merge
@@ -309,27 +310,25 @@ git rebase rebase-branch	#git log --graph
 
 ```
 
-
-
-
 ## Explanations
 
-	### File Status Lifecycle
+### File Status Lifecycle
 There are four states for a file: untracked, unmodified, modified and staged.<br>
 - When you create a new file it will get a ***untracked*** status. Your repository still doesn't know this file, so any modifications won't be saved.<br>
 - Then you want to start tracking the file and to do so you need to "add" the file. It'll get a ***unmodified*** status and now git know about your file. From now on this will be the default status.<br>
 - If you modify a file with a unmodified status it'll get to the next status, which is obviously ***modified***. It means that if you want to save it you need to "add" the file again, so it will get back to unmodified status.<br>
 - Once you finished working on the files and all of them are with unmodified status you can finally "commit" you work. When you do that git creates a new snapshot of all your tracked files so that you can get back to this moment anytime. Notice that the added files with a unmodified status are also ***staged***, which means they are ready to be saved in the next commit.<br>
 
-<br><br>
-	### Branches
+### Branches
 Branch is a pointer that points to a specific commit. While the "master" branch usually points to the last commit, a can create a branch called "second branch" that points to the last commit and start working on it without following the master commits. It's like creating a new timeline apart from the natural course of life.
 
-<br><br>
-	### Gitignore
+### Gitignore
 You can create a file called .gitignore and put all the files you want to hide from git when looking for files to track. Examples of code within .gitignore file:<br><br>
+```
 *.json
 passwords.db
 ./assets/*.png
+./public/
+```
 
 

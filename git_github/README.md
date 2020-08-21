@@ -206,9 +206,57 @@ git push origin :1.0.0
 git push origin :branch-to-delete
 ```
 ```
+# see only the commits with the specified file within it
+git log file.txt
+```
+```
+# remove files with git
+git rm file.txt
+```
+```
+# search for deleted files
+git log --diff-filter=D --summary
+```
+```
+# restore specific delete file from specific commit
+git checkout bfb4~1 file.txt
+```
+```
+# using .gitignore file
+git rm --chached file_to_be_removed.txt other_file.png
+git add .gitignore
+git commit -m "Added .gitignore file"
+```
+```
+## remote repository
+# add
+git remote add origin git@github.com:herculesgabriel/github-course.git
+# change
+git remote set-url origin git@github.com:herculesgabriel/github-course.git
+# delete
+git remote rm origin
+# list
+git remote -v
+# list branches
+git branch -r
+```
+```
+# fetch: download the info found on the corresponding remote branch inside local branch
+git fetch origin
+# pull: does the same as fetch, but also merge the remote branch against the local one
+git pull origin
+# push: send all the info up to Gihub, updating the remote tracking branch
+git push origin
+```
+```
 #
 code
 ```
+```
+#
+code
+```
+
 
 ## Example Situations
 ```

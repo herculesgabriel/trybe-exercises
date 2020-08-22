@@ -250,14 +250,9 @@ git pull origin
 git push origin
 ```
 ```
-#
-code
+# delete the last commit
+git checkout HEAD~1
 ```
-```
-#
-code
-```
-
 
 ## Example Situation
 ```
@@ -307,7 +302,6 @@ git commit -m "added any"	#git log
 
 git rebase rebase-branch	#git log --graph
 
-
 ```
 
 ## Explanations
@@ -323,7 +317,7 @@ There are four states for a file: untracked, unmodified, modified and staged.<br
 Branch is a pointer that points to a specific commit. While the "master" branch usually points to the last commit, a can create a branch called "second branch" that points to the last commit and start working on it without following the master commits. It's like creating a new timeline apart from the natural course of life.
 
 ### Gitignore
-You can create a file called .gitignore and put all the files you want to hide from git when looking for files to track. Examples of code within .gitignore file:<br><br>
+You can create a file called .gitignore and put all the files you want to hide from git when looking for files to track. Examples of code within .gitignore file:<br>
 ```
 *.json
 passwords.db

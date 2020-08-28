@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positivo ou negativo</title>
+
+  <style>
+    body {
+      font-family: 'Ubuntu';
+      color: white;
+    }
+
+    main {
+      background-color: #7EBE91;
+      width: 60%;
+      margin: auto;
+      padding: 10px 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: start;
+      font-size: 2.5em;
+      margin-bottom: 50px;
+    }
+
+    p {
+      font-size: 1.3em;
+    }
+
+    input {
+      padding: 10px;
+      margin: 8px;
+      border-radius: 8px;
+      border: 6px solid #A3D292;
+      outline-color: #F69EAF;
+      font-family: 'Ubuntu';
+      text-align: center;
+    }
+
+    #body_result {
+      font-size: 2em;
+    }
+  </style>
+
+  <script>
+    function isPositive() {
+      let resultado = '';
+
+      let number = parseInt(document.querySelector('#value').value);
+
+      if (number == 0) {
+        resultado = 'zero';
+      } else if (number > 0) {
+        resultado = 'positive';
+      } else {
+        resultado = 'negative';
+      }
+
+      document.querySelector('#body_result').innerHTML = resultado;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <main>
+    <h1>O número é positivo ou negativo?</h1>
+
+    <p>
+      Digite o número desejado para verificar:
+    </p>
+
+    <input id="value" type="number" placeholder="Digite um número">
+    <br>
+    <input type="button" value="Verificar" onclick="{isPositive()}">
+    <p id="head_result">
+      O número digitado é:
+    </p>
+    <p id="body_result"></p>
+
+  </main>
+
+</body>
+
+</html>

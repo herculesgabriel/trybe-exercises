@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcula lucro</title>
+
+  <style>
+    body {
+      font-family: 'Ubuntu';
+      color: white;
+    }
+
+    main {
+      background-color: #7EBE91;
+      width: 60%;
+      margin: auto;
+      padding: 10px 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: start;
+      font-size: 2.5em;
+      margin-bottom: 50px;
+    }
+
+    p {
+      font-size: 1.3em;
+    }
+
+    input {
+      padding: 10px;
+      margin: 8px;
+      border-radius: 8px;
+      border: 6px solid #A3D292;
+      outline-color: #F69EAF;
+      font-family: 'Ubuntu';
+      text-align: center;
+    }
+
+    #body_result {
+      font-size: 2em;
+    }
+  </style>
+
+  <script>
+    // valor igual a zero = erro
+
+    function isEven() {
+      let texto_resultado = '';
+
+      let valorCusto = parseInt(document.querySelector('#cost_price').value);
+      let valorVenda = parseInt(document.querySelector('#sell_price').value);
+
+      if (valorCusto <= 0 || valorVenda <= 0) {
+        alert('Por favor, digite um valor maior que zero');
+      } else {
+        let imposto = (valorCusto * 20) / 100;
+        let custoTotal = valorCusto + imposto;
+        let lucro = valorVenda - custoTotal;
+
+        let lucroMilProdutos = lucro * 1000;
+
+        document.querySelector('#body_result').innerHTML = lucroMilProdutos;
+      }
+
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <main>
+    <h1>Calcula lucro</h1>
+
+    <p>
+      Calcula o lucro na venda de mil unidades de um produto. Para consultar, informe o custo e o valor de venda do seu
+      produto:
+    </p>
+
+    <input id="cost_price" type="number" placeholder="Digite o custo do produto">
+    <input id="sell_price" type="number" placeholder="Digite o valor de venda">
+    <br>
+    <input type="button" value="Calcular" onclick="{isEven()}">
+    <p id="head_result">
+      O lucro na venda de 1000 unidades do seu produto é:
+    </p>
+    <p id="body_result"></p>
+
+  </main>
+
+</body>
+
+</html>

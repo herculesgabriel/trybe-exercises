@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maior de três</title>
+
+  <style>
+    body {
+      font-family: 'Ubuntu';
+      color: white;
+    }
+
+    main {
+      background-color: #7EBE91;
+      width: 60%;
+      margin: auto;
+      padding: 10px 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: start;
+      font-size: 2.5em;
+      margin-bottom: 50px;
+    }
+
+    p {
+      font-size: 1.3em;
+    }
+
+    input {
+      padding: 10px;
+      margin: 8px;
+      border-radius: 8px;
+      border: 6px solid #A3D292;
+      outline-color: #F69EAF;
+      font-family: 'Ubuntu';
+      text-align: center;
+    }
+
+    #body_result {
+      font-size: 2em;
+    }
+  </style>
+
+  <script>
+    function whichIsGreater() {
+      let resultado = '';
+
+      let a = parseInt(document.querySelector('#value_a').value);
+      let b = parseInt(document.querySelector('#value_b').value);
+      let c = parseInt(document.querySelector('#value_c').value);
+
+      if (a == b && b == c) {
+        alert('É preciso digitar valores diferentes!');
+      } else if (a > b && a > c) {
+        resultado = a;
+      } else if (b > a && b > c) {
+        resultado = b;
+      } else {
+        resultado = c;
+      }
+
+      document.querySelector('#body_result').innerHTML = resultado;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <main>
+    <h1>Qual o maior o número?</h1>
+
+    <p>
+      Digite os valores a serem comparados:
+    </p>
+
+    <input id="value_a" type="number" placeholder="Digite um número">
+    <input id="value_b" type="number" placeholder="Digite um número">
+    <input id="value_c" type="number" placeholder="Digite um número">
+    <br>
+    <input type="button" value="Resultado" onclick="{whichIsGreater()}">
+    <p id="head_result">
+      O maior número é:
+    </p>
+    <p id="body_result"></p>
+
+  </main>
+
+</body>
+
+</html>

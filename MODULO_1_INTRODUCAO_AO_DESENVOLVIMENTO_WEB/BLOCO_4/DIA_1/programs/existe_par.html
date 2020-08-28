@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tem par no meio</title>
+
+  <style>
+    body {
+      font-family: 'Ubuntu';
+      color: white;
+    }
+
+    main {
+      background-color: #7EBE91;
+      width: 60%;
+      margin: auto;
+      padding: 10px 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: start;
+      font-size: 2.5em;
+      margin-bottom: 50px;
+    }
+
+    p {
+      font-size: 1.3em;
+    }
+
+    input {
+      padding: 10px;
+      margin: 8px;
+      border-radius: 8px;
+      border: 6px solid #A3D292;
+      outline-color: #F69EAF;
+      font-family: 'Ubuntu';
+      text-align: center;
+    }
+
+    #body_result {
+      font-size: 2em;
+    }
+  </style>
+
+  <script>
+    function isEven() {
+      let texto_resultado = '';
+
+      let valor_a = parseInt(document.querySelector('#value_a').value);
+      let valor_b = parseInt(document.querySelector('#value_b').value);
+      let valor_c = parseInt(document.querySelector('#value_c').value);
+
+      if (valor_a % 2 == 0 || valor_b % 2 == 0 || valor_c % 2 == 0) {
+        texto_resultado = 'Um dos valores digitados é par';
+      } else {
+        texto_resultado = 'Nenhum dos valores digitados é par';
+      }
+
+      document.querySelector('#body_result').innerHTML = texto_resultado;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <main>
+    <h1>Tem par no meio?</h1>
+
+    <p>
+      Verifica se um dos três valores digitados é par.
+    </p>
+
+    <input id="value_a" type="number" placeholder="Digite o primeiro número">
+    <input id="value_b" type="number" placeholder="Digite o segundo número">
+    <input id="value_c" type="number" placeholder="Digite o terceiro número">
+    <br>
+    <input type="button" value="Verificar" onclick="{isEven()}">
+    <p id="head_result">
+      Resultado:
+    </p>
+    <p id="body_result"></p>
+
+  </main>
+
+</body>
+
+</html>

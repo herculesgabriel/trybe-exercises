@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soma</title>
+
+  <style>
+    body {
+      font-family: 'Ubuntu';
+      color: white;
+      background-color: #EBD78B;
+    }
+
+    header {
+      background-color: #F69EAF;
+      float: left;
+      width: 20%;
+    }
+
+    #nav ul {
+      
+    }
+
+    #nav li {
+      list-style: none;
+      text-indent: -30px;
+    }
+
+    #nav a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2em;
+    }
+
+    main {
+      background-color: #7EBE91;
+      float: right;
+      width: 70%;
+      margin: auto;
+      padding: 10px 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    .main {
+      text-align: start;
+      font-size: 2.5em;
+      margin-bottom: 50px;
+    }
+
+    p {
+      font-size: 1.3em;
+    }
+
+    input {
+      padding: 10px;
+      margin: 8px;
+      border-radius: 8px;
+      border: 6px solid #A3D292;
+      outline-color: #F69EAF;
+      font-family: 'Ubuntu';
+      text-align: center;
+    }
+
+    #body_result {
+      font-size: 2em;
+    }
+
+    footer {      
+      clear: both;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      text-align: center;
+      line-height: 5px;
+      background-color: #8F8CBC;
+    }
+  </style>
+
+  <script>
+    function somar() {
+      let a = parseInt(document.querySelector('#value_a').value);
+      let b = parseInt(document.querySelector('#value_b').value);
+
+      document.querySelector('#body_result').innerHTML = a + b;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <header>
+    <h1 class="header">Scripts</h1>
+    <nav>
+      <ul id="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="./programs/soma.html">Soma</a></li>
+        <li><a href="./programs/subtracao.html">Subtração</a></li>
+        <li><a href="./programs/multiplicacao.html">Multiplicação</a></li>
+        <li><a href="./programs/divisao.html">Divisão</a></li>
+        <li><a href="./programs/modulo.html">Módulo</a></li>
+        <li><a href="./programs/maior_de_dois.html">Maior de dois</a></li>
+        <li><a href="./programs/maior_de_tres.html">Maior de três</a></li>
+        <li><a href="./programs/positivo_ou_negativo.html">Positivo ou negativo</a></li>
+        <li><a href="./programs/verifica_triangulo.html">Verifica triângulo</a></li>
+        <li><a href="./programs/consulta_xadrez.html">Consulta xadrez</a></li>
+        <li><a href="./programs/converte_porcentagem.html">Converte porcentagem</a></li>
+        <li><a href="./programs/existe_par.html">Existe par</a></li>
+        <li><a href="./programs/existe_impar.html">Existe ímpar</a></li>
+        <li><a href="./programs/calcula_lucro.html">Calcula lucro</a></li>
+        <li><a href="./programs/salario_liquido.html">Salário líquido</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="main">Soma dois valores</h1>
+
+    <p>
+      Digite os valores desejados:
+    </p>
+
+    <input id="value_a" type="number" placeholder="Digite um número">
+    <input id="value_b" type="number" placeholder="Digite um número">
+    <br>
+    <input type="button" value="Calcular" onclick="{somar()}">
+    <p id="head_result">
+      O resultado da soma é:
+    </p>
+    <p id="body_result"></p>
+
+  </main>
+
+  <footer>
+    <p>Hercules Gabriel | Trybe 💚</p>
+  </footer>
+
+</body>
+
+</html>

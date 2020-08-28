@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplicação</title>
+
+  <style>
+    body {
+      font-family: 'Ubuntu';
+      color: white;
+    }
+
+    main {
+      background-color: #7EBE91;
+      width: 60%;
+      margin: auto;
+      padding: 10px 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: start;
+      font-size: 2.5em;
+      margin-bottom: 50px;
+    }
+
+    p {
+      font-size: 1.3em;
+    }
+
+    input {
+      padding: 10px;
+      margin: 8px;
+      border-radius: 8px;
+      border: 6px solid #A3D292;
+      outline-color: #F69EAF;
+      font-family: 'Ubuntu';
+      text-align: center;
+    }
+
+    #body_result {
+      font-size: 2em;
+    }
+  </style>
+
+  <script>
+    function multiplicar() {
+      let a = parseInt(document.querySelector('#value_a').value);
+      let b = parseInt(document.querySelector('#value_b').value);
+
+      document.querySelector('#body_result').innerHTML = a * b;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <main>
+    <h1>Multiplica dois valores</h1>
+
+    <p>
+      Digite os valores desejados:
+    </p>
+
+    <input id="value_a" type="number" placeholder="Digite um número">
+    <input id="value_b" type="number" placeholder="Digite um número">
+    <br>
+    <input type="button" value="Calcular" onclick="{multiplicar()}">
+    <p id="head_result">
+      O resultado da multiplicação é:
+    </p>
+    <p id="body_result"></p>
+
+  </main>
+
+</body>
+
+</html>

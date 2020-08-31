@@ -6,4 +6,8 @@ for (let index = 0; index < numbers.length; index++) {
   if (numbers[index] % 2 != 0) quantidadeImpares++;
 }
 
-console.log(quantidadeImpares);
+if (quantidadeImpares === 0) {
+  console.log('nenhum valor ímpar encontrado')
+} else {
+  console.log(quantidadeImpares);
+}

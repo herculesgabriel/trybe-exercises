@@ -1,19 +1,18 @@
-let resultado = '';
+function whichIsGreaterThree(a, b, c) {
+  let result = '';
 
-let a = 10;
-let b = 15;
-let c = 5;
-
-if (a == b && b == c) {
-  console.log('É preciso digitar valores diferentes!');
-} else {
-  if (a > b && a > c) {
-    resultado = a;
-  } else if (b > a && b > c) {
-    resultado = b;
+  if (a == b && b == c) {
+    result = 'É preciso digitar valores diferentes!';
   } else {
-    resultado = c;
+    if (a > b && a > c) {
+      result = a;
+    } else if (b > a && b > c) {
+      result = b;
+    } else {
+      result = c;
+    }
   }
 
-  console.log(resultado);
+  return result;
+
 }

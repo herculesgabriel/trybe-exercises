@@ -1,14 +1,13 @@
-let resultado = '';
+function whichIsGreaterTwo(a, b) {
+  let result = '';
 
-let a = 10;
-let b = 15;
+  if (a == b) {
+    result = 'É preciso digitar valores diferentes!';
+  } else if (a > b) {
+    result = a;
+  } else {
+    result = b;
+  }
 
-if (a == b) {
-  console.log('É preciso digitar valores diferentes!');
-} else if (a > b) {
-  resultado = a;
-  console.log(resultado);
-} else {
-  resultado = b;
-  console.log(resultado);
+  return result;
 }

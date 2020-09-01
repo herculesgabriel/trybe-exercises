@@ -1,49 +1,50 @@
-const aliquota_INSS_1 = 0.08;
-const aliquota_INSS_2 = 0.09;
-const aliquota_INSS_3 = 0.11;
-const aliquota_INSS_4 = 570.88;
+const aliquot_INSS_1 = 0.08;
+const aliquot_INSS_2 = 0.09;
+const aliquot_INSS_3 = 0.11;
+const aliquot_INSS_4 = 570.88;
 
-const aliquota_IR_1 = 0.075;
-const aliquota_IR_2 = 0.15;
-const aliquota_IR_3 = 0.225;
-const aliquota_IR_4 = 0.275;
+const aliquot_IR_1 = 0.075;
+const aliquot_IR_2 = 0.15;
+const aliquot_IR_3 = 0.225;
+const aliquot_IR_4 = 0.275;
 
-const deducao_1 = 142.80;
-const deducao_2 = 354.80;
-const deducao_3 = 636.13;
-const deducao_4 = 869.36;
+const taxDeduction_1 = 142.80;
+const taxDeduction_2 = 354.80;
+const taxDeduction_3 = 636.13;
+const taxDeduction_4 = 869.36;
 
-let salarioBruto = 2210;
-let salarioBase = 0;
-let impostoRenda = 0;
-let salarioLiquido = 0;
+function netSalary(grossSalary) {
+  let baseSalary = 0;
+  let incomeTax = 0;
+  let netSalary = 0;
 
-if (salarioBruto <= 0) {
-  console.log('Por favor, digite um valor maior que zero');
-} else {
-  if (salarioBruto <= 1556.94) {
-    salarioBase = salarioBruto - (salarioBruto * aliquota_INSS_1);
-  } else if (salarioBruto <= 2594.92) {
-    salarioBase = salarioBruto - (salarioBruto * aliquota_INSS_2);
-  } else if (salarioBruto <= 5189.82) {
-    salarioBase = salarioBruto - (salarioBruto * aliquota_INSS_3);
+  if (grossSalary <= 0) {
+    return 'Por favor, digite um valor maior que zero';
   } else {
-    salarioBase = salarioBruto - aliquota_INSS_4;
+    if (grossSalary <= 1556.94) {
+      baseSalary = grossSalary - (grossSalary * aliquot_INSS_1);
+    } else if (grossSalary <= 2594.92) {
+      baseSalary = grossSalary - (grossSalary * aliquot_INSS_2);
+    } else if (grossSalary <= 5189.82) {
+      baseSalary = grossSalary - (grossSalary * aliquot_INSS_3);
+    } else {
+      baseSalary = grossSalary - aliquot_INSS_4;
+    }
+
+    if (baseSalary <= 1903.98) {
+      incomeTax = 0;
+    } else if (baseSalary <= 2826.65) {
+      incomeTax = (baseSalary * aliquot_IR_1) - taxDeduction_1;
+    } else if (baseSalary <= 3751.05) {
+      incomeTax = (baseSalary * aliquot_IR_2) - taxDeduction_2;
+    } else if (baseSalary <= 4664.68) {
+      incomeTax = (baseSalary * aliquot_IR_3) - taxDeduction_3;
+    } else {
+      incomeTax = (baseSalary * aliquot_IR_4) - taxDeduction_4;
+    }
+
+    netSalary = baseSalary - incomeTax
+
+    return netSalary;
   }
-
-  if (salarioBase <= 1903.98) {
-    impostoRenda = 0;
-  } else if (salarioBase <= 2826.65) {
-    impostoRenda = (salarioBase * aliquota_IR_1) - deducao_1;
-  } else if (salarioBase <= 3751.05) {
-    impostoRenda = (salarioBase * aliquota_IR_2) - deducao_2;
-  } else if (salarioBase <= 4664.68) {
-    impostoRenda = (salarioBase * aliquota_IR_3) - deducao_3;
-  } else {
-    impostoRenda = (salarioBase * aliquota_IR_4) - deducao_4;
-  }
-
-  salarioLiquido = salarioBase - impostoRenda
-
-  console.log(salarioLiquido);
 }

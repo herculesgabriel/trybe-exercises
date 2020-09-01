@@ -1,23 +1,25 @@
-let texto_resultado = '';
+function gradeResult(grade) {
 
-let valor = 75;
+  let textResult = '';
 
-if (valor < 0 || valor > 100) {
-  texto_resultado = 'Erro. Digite um número entre 0 e 100';
-} else {
-  if (valor >= 90) {
-    texto_resultado = 'A';
-  } else if (valor >= 80) {
-    texto_resultado = 'B';
-  } else if (valor >= 70) {
-    texto_resultado = 'C';
-  } else if (valor >= 60) {
-    texto_resultado = 'D';
-  } else if (valor >= 50) {
-    texto_resultado = 'E';
-  } else if (valor < 50) {
-    texto_resultado = 'F';
+  if (grade < 0 || grade > 100) {
+    textResult = 'Erro. Digite um número entre 0 e 100';
+  } else {
+    if (grade >= 90) {
+      textResult = 'A';
+    } else if (grade >= 80) {
+      textResult = 'B';
+    } else if (grade >= 70) {
+      textResult = 'C';
+    } else if (grade >= 60) {
+      textResult = 'D';
+    } else if (grade >= 50) {
+      textResult = 'E';
+    } else if (grade < 50) {
+      textResult = 'F';
+    }
+
+    return textResult;
   }
 
-  console.log(texto_resultado);
 }

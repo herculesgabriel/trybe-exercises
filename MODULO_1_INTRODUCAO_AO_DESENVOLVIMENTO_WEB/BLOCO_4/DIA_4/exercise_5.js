@@ -16,5 +16,7 @@ console.log(`
   ${info_1.personagem} e ${info_2.personagem}
   ${info_1.origem} e ${info_2.origem}
   ${info_1.nota} e ${info_2.nota}
-  ${info_1.recorrente} e ${info_2.recorrente}
+  ${(info_1.recorrente === 'Sim' && info_1.recorrente === info_2.recorrente)
+    ? 'Ambos recorrentes' : `${info_1.recorrente} e ${info_2.recorrente}`
+  }
 `);

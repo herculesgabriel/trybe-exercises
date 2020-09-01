@@ -5,7 +5,7 @@ function whichNameIsBiggest(arrayNames) {
 
   for (let index in arrayNames) {
     if (arrayNames[index].length > biggestName.length) {
-      biggestName = arrayNames[index]
+      biggestName = arrayNames[index];
     }
   }
   return biggestName;

@@ -1,13 +1,13 @@
-let resultado = '';
+function isTriangle(a, b, c) {
 
-let a = 60;
-let b = 80;
-let c = 40;
+  let result = '';
 
-if (a + b + c == 180) {
-  resultado = 'Os ângulos correspondem aos de um triângulo.';
-} else {
-  resultado = 'Os ângulos não correspondem aos de um triângulo.';
+  if (a + b + c == 180) {
+    result = 'Os ângulos correspondem aos de um triângulo.';
+  } else {
+    result = 'Os ângulos não correspondem aos de um triângulo.';
+  }
+
+  return result;
+
 }
-
-console.log(resultado);

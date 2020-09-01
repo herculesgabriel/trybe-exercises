@@ -9,45 +9,45 @@ const cavalo =
 const rainha =
   'A rainha é considerada a peça mais poderosa do tabuleiro. Ela pode mover-se qualquer número de casas em linha reta - verticalmente, horizontalmente ou diagonalmente. A rainha se move como a torre e o bispo combinados. A menos que esteja realizando uma captura, o movimento deve terminar em uma casa desocupada e ela não pode pular outras peças. A rainha captura no mesmo caminho em que se move, ocupando a casa da peça adversária.';
 const rei =
-  'O rei é a peça mais importante do xadrez. Se o rei for encurralado de modo que sua captura seja inevitável, o jogo termina e o este jogador perde. O rei tem pouca mobilidade, assim ele é considerado também uma das peças mais fracas no jogo. O rei pode se mover para qualquer casa adjacente. Assim, ele pode mover-se uma casa em qualquer direção: horizontalmente, verticalmente ou diagonalmente. Ele não pode se mover para uma casa ocupada por uma peça da mesma cor. O rei captura outra peça da mesma maneira que se move, ocupando a casa da peça adversária. Existe um limite adicional ao movimento do rei. O rei não pode se mover para uma casa que o coloque sob ataque de uma peça adversária (chamado em “cheque”). Como resultado desta limitação, dois reis nunca poderão estar ao lado um do outro - uma vez que mover-se para o lado do outro rei o colocaria em cheque. O rei pode também ser forçado a mover-se ou capturar se estiver sob ataque (“cheque”) e a única maneira de interromper o ataque for mover o rei.';
+  'O rei é a peça mais importante do xadrez. Se o rei for encurralado de modo que sua captura seja inevitável, o jogo termina e o este jogador perde. O rei tem pouca mobilidade, assim ele é considerado também uma das peças mais fracas no jogo. O rei pode se mover para qualquer casa adjacente. Assim, ele pode mover-se uma casa em qualquer direção: horizontalmente, verticalmente ou diagonalmente. Ele não pode se mover para uma casa ocupada por uma peça da mesma cor. O rei captura outra peça da mesma maneira que se move, ocupando a casa da peça adversária. Existe um limite adicional ao movimento do rei. O rei não pode se mover para uma casa que o coloque sob ataque de uma peça adversária (chamado em “cheque”). Como result desta limitação, dois reis nunca poderão estar ao lado um do outro - uma vez que mover-se para o lado do outro rei o colocaria em cheque. O rei pode também ser forçado a mover-se ou capturar se estiver sob ataque (“cheque”) e a única maneira de interromper o ataque for mover o rei.';
 
-let titulo_resultado = '';
-let texto_resultado = '';
+function whatItDoes(chessPiece) {
 
-let textoCampo = 'cavalo'
+  let title_result = '';
+  let text_result = '';
 
-let peca = textoCampo.toLowerCase();
+  const piece = chessPiece.toLowerCase();
 
-switch (peca) {
-  case 'peão':
-    titulo_resultado = 'Peão';
-    texto_resultado = peao;
-    break;
-  case 'bispo':
-    titulo_resultado = 'Bispo';
-    texto_resultado = bispo;
-    break;
-  case 'torre':
-    titulo_resultado = 'Torre';
-    texto_resultado = torre;
-    break;
-  case 'cavalo':
-    titulo_resultado = 'Cavalo';
-    texto_resultado = cavalo;
-    break;
-  case 'rainha':
-    titulo_resultado = 'Rainha';
-    texto_resultado = rainha;
-    break;
-  case 'rei':
-    titulo_resultado = 'Rei';
-    texto_resultado = rei;
-    break;
-  default:
-    titulo_resultado = 'Nenhuma peça encontrada. Favor digitar o nome corretamente.';
-    texto_resultado = null;
-    break;
+  switch (piece) {
+    case 'peão':
+      titulo_result = 'Peão';
+      texto_result = peao;
+      break;
+    case 'bispo':
+      titulo_result = 'Bispo';
+      texto_result = bispo;
+      break;
+    case 'torre':
+      titulo_result = 'Torre';
+      texto_result = torre;
+      break;
+    case 'cavalo':
+      titulo_result = 'Cavalo';
+      texto_result = cavalo;
+      break;
+    case 'rainha':
+      titulo_result = 'Rainha';
+      texto_result = rainha;
+      break;
+    case 'rei':
+      titulo_result = 'Rei';
+      texto_result = rei;
+      break;
+    default:
+      titulo_result = 'Nenhuma peça encontrada. Favor digitar o nome corretamente.';
+      texto_result = null;
+      break;
+  }
+
+  return `${title_result}: ${text_result}`;
 }
-
-console.log(titulo_resultado);
-console.log(texto_resultado);

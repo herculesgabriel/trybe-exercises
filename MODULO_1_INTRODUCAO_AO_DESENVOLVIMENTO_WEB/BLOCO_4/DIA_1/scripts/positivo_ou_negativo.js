@@ -1,13 +1,13 @@
-let resultado = '';
+function positiveOrNegative(number) {
+  let result = '';
 
-let number = -6;
+  if (number == 0) {
+    result = 'zero';
+  } else if (number > 0) {
+    result = 'positive';
+  } else {
+    result = 'negative';
+  }
 
-if (number == 0) {
-  resultado = 'zero';
-} else if (number > 0) {
-  resultado = 'positive';
-} else {
-  resultado = 'negative';
+  return result;
 }
-
-console.log(resultado);

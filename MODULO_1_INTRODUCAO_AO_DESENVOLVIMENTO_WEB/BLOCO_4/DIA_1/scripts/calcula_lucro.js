@@ -1,16 +1,16 @@
-let texto_resultado = '';
+function getProfit(costPrice, sellingPrice) {
+  let textResult = 'O lucro na venda de 1000 unidades do seu produto é: ';
 
-let valorCusto = 4.75;
-let valorVenda = 8.95;
+  if (costPrice <= 0 || sellingPrice <= 0) {
+    textResult = 'Por favor, digite um valor maior que zero';
+    profitHundredProducts = null;
+  } else {
+    let tax = (costPrice * 20) / 100;
+    let totalCost = costPrice + tax;
+    let profit = sellingPrice - totalCost;
 
-if (valorCusto <= 0 || valorVenda <= 0) {
-  console.log('Por favor, digite um valor maior que zero');
-} else {
-  let imposto = (valorCusto * 20) / 100;
-  let custoTotal = valorCusto + imposto;
-  let lucro = valorVenda - custoTotal;
+    let profitHundredProducts = profit * 1000;
 
-  let lucroMilProdutos = lucro * 1000;
-
-  console.log(lucroMilProdutos);
+    return `${textResult}: ${profitHundredProducts}`;
+  }
 }

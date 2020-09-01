@@ -1,13 +1,11 @@
-let texto_resultado = '';
+function isOdd(a, b, c) {
+  let textResult = '';
 
-let valor_a = 4;
-let valor_b = 6;
-let valor_c = 3;
+  if (a % 2 != 0 || b % 2 != 0 || c % 2 != 0) {
+    textResult = 'Um dos valores digitados é ímpar';
+  } else {
+    textResult = 'Nenhum dos valores digitados é ímpar';
+  }
 
-if (valor_a % 2 != 0 || valor_b % 2 != 0 || valor_c % 2 != 0) {
-  texto_resultado = 'Um dos valores digitados é ímpar';
-} else {
-  texto_resultado = 'Nenhum dos valores digitados é ímpar';
+  return textResult;
 }
-
-console.log(texto_resultado);

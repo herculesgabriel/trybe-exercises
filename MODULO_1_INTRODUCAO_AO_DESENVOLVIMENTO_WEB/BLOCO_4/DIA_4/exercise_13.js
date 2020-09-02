@@ -1,4 +1,4 @@
-const valueTest = 'LVII';
+const valueTest = 'MMXVIII';
 
 function whichNumberIsThis(romanNumber) {
   let table = {
@@ -9,36 +9,23 @@ function whichNumberIsThis(romanNumber) {
     C: 100,
     M: 1000
   };
-
+  
+  // fix first number being less than second one
   let numbersArray = [];
-  //
-  let firstTime = true;
   let total = 0;
 
   for (let character in romanNumber) {
-    numbersArray.push(table[romanNumber[character]]);
-    //
-    if (firstTime) {
-      total = table[romanNumber[character]];
-      firstTime = false;
-    } else if (table[romanNumber[character]] <= table[romanNumber[character - 1]]) {
-      total += table[romanNumber[character]];
-    } else if (table[romanNumber[character]] > table[romanNumber[character - 1]]) {
-      // total -= 
+    numbersArray[character] = table[romanNumber[character]];
+  }
+
+  for (let index in numbersArray) {
+
+    if (numbersArray[index] < numbersArray[index + 1]) {
+      numbersArray[index + 1] = numbersArray[index + 1] - numbersArray[index];
+    } else {
+      total += numbersArray[index];
     }
   }
 
-
-
-  // se o número é igual => soma
-  // se o próximo número é menor => soma
-  // se o próximo número é maior => subtrai
-
-
-  // romanNumber.split('').forEach((value, index, array) => {
-  //   console.log(value, index, array)
-  // });
-
+  return total;
 }
-
-whichNumberIsThis(valueTest)

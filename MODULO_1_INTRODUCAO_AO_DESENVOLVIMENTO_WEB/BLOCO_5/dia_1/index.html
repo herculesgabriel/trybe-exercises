@@ -82,6 +82,15 @@
     set_uppercase(true);
 
     //  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+    function get_tag_content(tagname) {
+      let elements = document.getElementsByTagName(tagname);
+      for (let i = 0; i < elements.length; i += 1) {
+        console.log(elements[i].textContent);
+      }      
+    }
+      
+    get_tag_content('p');
+
   </script>
 </body>
 

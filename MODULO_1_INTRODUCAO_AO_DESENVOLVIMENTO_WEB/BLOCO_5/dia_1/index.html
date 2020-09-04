@@ -49,28 +49,38 @@
 
     modify_paragraph(1, 'Me vejo um desenvolvedor Full-Stack com conhecimentos sólidos em JavaScript');
 
-    //  Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
+    // Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
     function set_main_background_color(background) {
       document.getElementsByClassName('main-content')[0].style.backgroundColor = background;
     }
 
     set_main_background_color('rgb(76,164,109)');
 
-    //  Crie uma função que mude a cor do quadrado vermelho para branco.
+    // Crie uma função que mude a cor do quadrado vermelho para branco.
     function set_center_background_color(color) {
       document.getElementsByClassName('center-content')[0].style.backgroundColor = color;
     }
 
     set_center_background_color('white');
 
-    //  Crie uma função que corrija o texto da tag <h1>.
+    // Crie uma função que corrija o texto da tag <h1>.
     function set_main_text(text) {
       document.getElementsByTagName('h1')[0].innerText = text;
     }
 
     set_main_text('Exercício 5.1 - JavaScript');
-    
-    //  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+
+    // Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+    function set_uppercase(boolean) {
+      if (boolean) {
+        document.getElementsByTagName('p')[0].style.textTransform = 'uppercase';
+      } else {
+        document.getElementsByTagName('p')[0].autocapitalize = 'none';
+      }
+    }
+
+    set_uppercase(true);
+
     //  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
   </script>
 </body>

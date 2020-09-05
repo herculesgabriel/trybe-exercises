@@ -59,6 +59,8 @@
 
 <body>
   <script>
+    // First Part
+
     // Exercise 1
     const h1 = document.createElement('h1');
     h1.innerText = 'Exercício 5.2 - JavaScript DOM';
@@ -121,22 +123,24 @@
       div_main.appendChild(h3);
     }
 
-    // Exercise 10
+    // Second Part
+
+    // Exercise 1
     h1.className = 'title';
 
-    // Exercise 11
+    // Exercise 2
     document.querySelectorAll('h3').forEach(e => e.className = 'description');
 
-    // Exercise 12
+    // Exercise 3
     div_main.removeChild(div_left);
 
-    // Exercise 13
+    // Exercise 4
     div_right.style.marginRight = 'auto';
 
-    // Exercise 14
+    // Exercise 5
     div_center.parentNode.style.backgroundColor = 'green';
 
-    // Exercise 15
+    // Exercise 6
     const li_9 = document.getElementsByTagName('li')[9];
     const li_10 = document.getElementsByTagName('li')[8];
     unordered_list.removeChild(li_9);

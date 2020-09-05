@@ -140,11 +140,9 @@
     // Exercise 5
     div_center.parentNode.style.backgroundColor = 'green';
 
-    // Exercise 6
-    const li_9 = document.getElementsByTagName('li')[9];
-    const li_10 = document.getElementsByTagName('li')[8];
-    unordered_list.removeChild(li_9);
-    unordered_list.removeChild(li_10);
+    // Exercise 6    
+    unordered_list.lastChild.remove();
+    unordered_list.lastChild.remove();
   </script>
 </body>
 

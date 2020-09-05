@@ -105,10 +105,14 @@
 
     // Exercise 8
     const unordered_list = document.createElement('ul');
-    unordered_list.innerHTML =
-      '<li>Um</li><li>Dois</li><li>Três</li><li>Quatro</li><li>Cinco</li><li>Seis</li><li>Sete</li><li>Oito</li><li>Nove</li><li>Dez</li>';
-
     div_right.appendChild(unordered_list);
+
+    const arrayNumbers = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+    for (let number in arrayNumbers) {
+      const list_item = document.createElement('li');
+      list_item.innerText = [arrayNumbers[number]];
+      unordered_list.appendChild(list_item);
+    }
 
     // Exercise 9
     const h3_1 = document.createElement('h3');

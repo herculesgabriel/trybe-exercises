@@ -97,10 +97,22 @@
     div_left.appendChild(img);
 
     let unordered_list = document.createElement('ul');
-    unordered_list.innerHTML = '<li>Um</li><li>Dois</li><li>Três</li><li>Quatro</li><li>Cinco</li><li>Seis</li><li>Sete</li><li>Oito</li><li>Nove</li><li>Dez</li>';
+    unordered_list.innerHTML =
+      '<li>Um</li><li>Dois</li><li>Três</li><li>Quatro</li><li>Cinco</li><li>Seis</li><li>Sete</li><li>Oito</li><li>Nove</li><li>Dez</li>';
 
     div_right.appendChild(unordered_list);
-    
+
+    let h3_1 = document.createElement('h3');
+    let h3_2 = document.createElement('h3');
+    let h3_3 = document.createElement('h3');
+
+    h3_1.innerText = 'Título 1';
+    h3_2.innerText = 'Título 2';
+    h3_3.innerText = 'Título 3';
+
+    div_main.appendChild(h3_1);
+    div_main.appendChild(h3_2);
+    div_main.appendChild(h3_3);
   </script>
 </body>
 

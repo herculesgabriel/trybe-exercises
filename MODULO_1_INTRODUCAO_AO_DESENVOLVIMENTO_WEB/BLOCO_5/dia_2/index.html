@@ -75,14 +75,14 @@
     const div_center = document.createElement('div');
     div_center.className = 'center-content';
 
-    document.querySelector('.main-content').appendChild(div_center);
+    div_main.appendChild(div_center);
 
     // Exercise 4
     const p = document.createElement('p');
     p.innerText =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.';
 
-    document.querySelector('.center-content').appendChild(p);
+    div_center.appendChild(p);
 
     // Exercise 5
     const div_left = document.createElement('div');

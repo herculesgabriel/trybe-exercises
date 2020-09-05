@@ -115,17 +115,11 @@
     }
 
     // Exercise 9
-    const h3_1 = document.createElement('h3');
-    const h3_2 = document.createElement('h3');
-    const h3_3 = document.createElement('h3');
-
-    h3_1.innerText = 'Título 1';
-    h3_2.innerText = 'Título 2';
-    h3_3.innerText = 'Título 3';
-
-    div_main.appendChild(h3_1);
-    div_main.appendChild(h3_2);
-    div_main.appendChild(h3_3);
+    for (let i = 1; i <= 3; i += 1) {
+      const h3 = document.createElement('h3');
+      h3.innerText = 'Título ' + i;
+      div_main.appendChild(h3);
+    }
 
     // Exercise 10
     h1.className = 'title';

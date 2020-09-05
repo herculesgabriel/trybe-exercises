@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Exercício 5.2</title>
+  <style>
+    div {
+      border-color: black;
+      border-style: solid;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .main-content {
+      background-color: yellow;
+    }
+
+    .main-content .center-content {
+      background-color: red;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .main-content .center-content p {
+      font-style: italic;
+    }
+
+    .main-content .left-content {
+      background-color: green;
+      width: 60%;
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .main-content .left-content .small-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 100%;
+    }
+
+    .main-content .right-content {
+      background-color: blue;
+      width: 60%;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .main-content .description {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // First Part
+
+    // Exercise 1
+    const h1 = document.createElement('h1');
+    h1.innerText = 'Exercício 5.2 - JavaScript DOM';
+
+    document.querySelector('body').appendChild(h1);
+
+    // Exercise 2
+    const div_main = document.createElement('div');
+    div_main.className = 'main-content';
+
+    document.querySelector('body').appendChild(div_main);
+
+    // Exercise 3
+    const div_center = document.createElement('div');
+    div_center.className = 'center-content';
+
+    div_main.appendChild(div_center);
+
+    // Exercise 4
+    const p = document.createElement('p');
+    p.innerText =
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.';
+
+    div_center.appendChild(p);
+
+    // Exercise 5
+    const div_left = document.createElement('div');
+    div_left.className = 'left-content';
+
+    div_main.appendChild(div_left);
+
+    // Exercise 6
+    const div_right = document.createElement('div');
+    div_right.className = 'right-content';
+
+    div_main.appendChild(div_right);
+
+    // Exercise 7
+    const img = document.createElement('img');
+    img.src = 'https://picsum.photos/200';
+    img.className = 'small-image';
+
+    div_left.appendChild(img);
+
+    // Exercise 8
+    const unordered_list = document.createElement('ul');
+    div_right.appendChild(unordered_list);
+
+    const arrayNumbers = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+    for (let number in arrayNumbers) {
+      const list_item = document.createElement('li');
+      list_item.innerText = [arrayNumbers[number]];
+      unordered_list.appendChild(list_item);
+    }
+
+    // Exercise 9
+    for (let i = 1; i <= 3; i += 1) {
+      const h3 = document.createElement('h3');
+      h3.innerText = 'Título ' + i;
+      div_main.appendChild(h3);
+    }
+
+    // Second Part
+
+    // Exercise 1
+    h1.className = 'title';
+
+    // Exercise 2
+    document.querySelectorAll('h3').forEach(e => e.className = 'description');
+
+    // Exercise 3
+    div_main.removeChild(div_left);
+
+    // Exercise 4
+    div_right.style.marginRight = 'auto';
+
+    // Exercise 5
+    div_center.parentNode.style.backgroundColor = 'green';
+
+    // Exercise 6    
+    unordered_list.lastChild.remove();
+    unordered_list.lastChild.remove();
+  </script>
+</body>
+
+</html>

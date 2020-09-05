@@ -59,49 +59,58 @@
 
 <body>
   <script>
+    // Exercise 1
     let h1 = document.createElement('h1');
     h1.innerText = 'Exercício 5.2 - JavaScript DOM';
 
     document.querySelector('body').appendChild(h1);
 
+    // Exercise 2
     let div_main = document.createElement('div');
     div_main.className = 'main-content';
 
     document.querySelector('body').appendChild(div_main);
 
+    // Exercise 3
     let div_center = document.createElement('div');
     div_center.className = 'center-content';
 
     document.querySelector('.main-content').appendChild(div_center);
 
+    // Exercise 4
     let p = document.createElement('p');
     p.innerText =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.';
 
     document.querySelector('.center-content').appendChild(p);
 
+    // Exercise 5
     let div_left = document.createElement('div');
     div_left.className = 'left-content';
 
     div_main.appendChild(div_left);
 
+    // Exercise 6
     let div_right = document.createElement('div');
     div_right.className = 'right-content';
 
     div_main.appendChild(div_right);
 
+    // Exercise 7
     let img = document.createElement('img');
     img.src = 'https://picsum.photos/200';
     img.className = 'small-image';
 
     div_left.appendChild(img);
 
+    // Exercise 8
     let unordered_list = document.createElement('ul');
     unordered_list.innerHTML =
       '<li>Um</li><li>Dois</li><li>Três</li><li>Quatro</li><li>Cinco</li><li>Seis</li><li>Sete</li><li>Oito</li><li>Nove</li><li>Dez</li>';
 
     div_right.appendChild(unordered_list);
 
+    // Exercise 9
     let h3_1 = document.createElement('h3');
     let h3_2 = document.createElement('h3');
     let h3_3 = document.createElement('h3');
@@ -114,16 +123,22 @@
     div_main.appendChild(h3_2);
     div_main.appendChild(h3_3);
 
+    // Exercise 10
     h1.className = 'title';
 
+    // Exercise 11
     document.querySelectorAll('h3').forEach(e => e.className = 'description');
 
+    // Exercise 12
     div_main.removeChild(div_left);
 
+    // Exercise 13
     div_right.style.marginRight = 'auto';
 
+    // Exercise 14
     div_center.parentNode.style.backgroundColor = 'green';
 
+    // Exercise 15
     let li_9 = document.getElementsByTagName('li')[9];
     let li_10 = document.getElementsByTagName('li')[8];
     unordered_list.removeChild(li_9);

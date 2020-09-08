@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>Calculator</title>
+</head>
+
+<body>
+
+  <label>Square this number:
+    <input type="number" id="square-input" size="2">
+  </label>
+  <button id="square-button">Calculate</button>
+  <br><br>
+
+  <label>Half this number:
+    <input type="number" id="half-input" size="2">
+  </label>
+  <button id="half-button">Calculate</button>
+  <br><br>
+
+  <label>
+    Fraction:
+    <input type="number" id="percent1-input" size="2">
+  </label>
+  <label>
+    Whole:
+    <input type="number" id="percent2-input" size="2">
+  </label>
+  <button id="percent-button">Calculate</button>
+  <br><br>
+
+  <label>Calculate area of circle with radius:
+    <input type="number" id="area-input" size="2">
+  </label>
+  <button id="area-button">Calculate</button>
+  <br><br>
+
+  <label>Calculate cascading operations with a number:
+    <input type="number" id="all-input" size="2">
+  </label>
+  <button id="all-button">Calculate</button>
+  <br><br>
+  <div id="solution"></div>
+
+  <script>
+    const squareInput = document.getElementById('square-input');
+    const squareButton = document.getElementById('square-button');
+    const halfInput = document.getElementById('half-input');
+    const halfButton = document.getElementById('half-button');
+    const percent1Input = document.getElementById('percent1-input');
+    const percent2Input = document.getElementById('percent2-input');
+    const percentButton = document.getElementById('percent-button');
+    const areaInput = document.getElementById('area-input');
+    const areaButton = document.getElementById('area-button');
+    const allInput = document.getElementById('all-input');
+    const allButton = document.getElementById('all-button');
+    const solutionDiv = document.getElementById('solution');
+
+    function squareNumber(number) {
+      const squaredNumber = number ** 2;
+      solutionDiv.innerText = `The result of squaring the number ${number} is ${squaredNumber.toFixed(2)}.`;
+      return squaredNumber;
+    }
+
+    function halfNumber(number) {
+      const dividedNumber = number / 2;
+      solutionDiv.innerText = `Half of ${number} is ${dividedNumber}.`;
+      return dividedNumber;
+    }
+
+    function percentOf(number1, number2) {
+      const percent = (number1 * 100) / number2;
+      solutionDiv.innerText = `${number1} is ${percent.toFixed(2)}% of ${number2}`;
+      return percent;
+    }
+
+    function areaOfCircle(radius) {
+      const result = 3.14159265359 * (radius ** 2);
+      solutionDiv.innerText = `The area for a circle with radius ${radius} is ${result.toFixed(2)}`;
+      return result;
+    }
+
+    function calculateEverything(number) {
+      const halfResult = halfNumber(number);
+      const squaredResult = squareNumber(halfResult);
+      const areaResult = areaOfCircle(squaredResult);
+      const percentResult = percentOf(areaResult, squaredResult);
+
+      solutionDiv.innerHTML = `
+        Half: ${halfResult}<br>
+        Square: ${squaredResult.toFixed(2)}<br>
+        Area: ${areaResult.toFixed(2)}<br>
+        Percent: ${percentResult.toFixed(2)}%
+      `;
+
+      return percentResult;
+    }
+
+    squareButton.addEventListener('click', () => squareNumber(squareInput.value));
+    halfButton.addEventListener('click', () => halfNumber(halfInput.value));
+    percentButton.addEventListener('click', () => percentOf(percent1Input.value, percent2Input.value));
+    areaButton.addEventListener('click', () => areaOfCircle(areaInput.value));
+    allButton.addEventListener('click', () => calculateEverything(allInput.value));
+  </script>
+
+</body>
+
+</html>

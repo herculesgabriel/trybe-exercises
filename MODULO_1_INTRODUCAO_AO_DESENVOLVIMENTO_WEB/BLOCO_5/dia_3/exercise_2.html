@@ -57,21 +57,23 @@
     }
 
     function halfNumber(number) {
-      
+      const dividedNumber = number / 2;
+      solutionDiv.innerText = `Half of ${number} is ${dividedNumber}.`;
+      return dividedNumber;
     }
 
     function percentOf(number) {
-      
+
     }
 
     function areaOfCircle(number) {
-      
+
     }
 
     squareButton.addEventListener('click', () => squareNumber(squareInput.value));
-    squareButton.addEventListener('click', () => halfNumber(halfInput.value));
-    squareButton.addEventListener('click', () => percentOf(percent1Input.value, percent2Input.value));
-    squareButton.addEventListener('click', () => areaOfCircle(areaInput.value));
+    halfButton.addEventListener('click', () => halfNumber(halfInput.value));
+    percentButton.addEventListener('click', () => percentOf(percent1Input.value, percent2Input.value));
+    areaButton.addEventListener('click', () => areaOfCircle(areaInput.value));
   </script>
 
 </body>

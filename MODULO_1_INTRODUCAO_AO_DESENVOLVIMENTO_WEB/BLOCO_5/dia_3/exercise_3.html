@@ -7,13 +7,7 @@
   <link rel="stylesheet" type="text/css" href="http://nptcstudents.co.uk/andrewg/jsweb/css/reset.css" />
   <link rel="stylesheet" type="text/css" href="http://nptcstudents.co.uk/andrewg/jsweb/css/jsweb.css" />
 
-
-
   <!-- JavaScript could go up here -->
-  <!-- JavaScript could go up here -->
-  <!-- JavaScript could go up here -->
-
-
 
 </head>
 
@@ -34,6 +28,14 @@
           Add your button here
         </div>
 
+        <script>
+          const divExample = document.querySelector('.exampleblock');
+          const clickmeButton = document.createElement('button');
+          clickmeButton.textContent = 'CLICK ME';
+          clickmeButton.addEventListener('click', () => {alert('You clicked the button')})
+          divExample.appendChild(clickmeButton);
+        </script>
+
         <h2>Task 2</h2>
 
         <p>Add two lines of script to the &lt;script&gt; tag in the source of this page marked for this task (<b>lines
@@ -48,10 +50,7 @@
         </p>
 
         <script language="javascript" type="text/javascript">
-          <!-- JavaScript for task 3 here 
-          -->
-        <!-- JavaScript for task 3 here -->
-        <!-- JavaScript for task 3 here -->
+
         </script>
 
         <p>You may want to consider using JavaScript's built in <a href="http://www.w3schools.com/js/js_obj_math.asp"

@@ -62,8 +62,10 @@
       return dividedNumber;
     }
 
-    function percentOf(number) {
-
+    function percentOf(number1, number2) {
+      const percent = (number1 * 100) / number2;
+      solutionDiv.innerText = `${number1} is ${percent}% of ${number2}`;
+      return percent;
     }
 
     function areaOfCircle(number) {

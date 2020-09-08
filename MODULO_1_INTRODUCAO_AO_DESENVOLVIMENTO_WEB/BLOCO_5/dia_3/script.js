@@ -1,4 +1,4 @@
-var personName = "";
+let personName = "";
 
 function complainMessage() {
   alert("I told you not to do that " + personName);
@@ -10,7 +10,7 @@ function typeAndScream() {
 }
 
 function goDark() {
-  var body = document.getElementsByTagName("body")[0];
+  const body = document.getElementsByTagName("body")[0];
   if (body.className == "") {
     body.className = "dark";
   }
@@ -21,6 +21,15 @@ function goDark() {
 }
 
 function finishTheStory() {
-  document.getElementById("story").innerHTML = "So I carefully searched the damp dungeon. " +
-    "There you are! I grinned a smile with all 98 of my gleaming teeth. Dinner time!";
+  document.getElementById("story").innerHTML = "So I carefully searched the damp dungeon. There you are! I grinned a smile with all 98 of my gleaming teeth. Dinner time!";
 }
+
+const inputText = document.getElementById('name');
+const goDarkButton = document.getElementById('goDarkButton');
+const doNotClickButton = document.getElementById('doNotClickButton');
+const tellMeButton = document.getElementById('tellMeButton');
+
+inputText.addEventListener('input', typeAndScream);
+goDarkButton.addEventListener('click', goDark);
+doNotClickButton.addEventListener('click', complainMessage);
+tellMeButton.addEventListener('click', finishTheStory);

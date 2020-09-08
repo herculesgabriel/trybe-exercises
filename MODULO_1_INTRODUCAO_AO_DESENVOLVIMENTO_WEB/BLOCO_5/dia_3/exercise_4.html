@@ -14,14 +14,25 @@
     const img = document.getElementsByTagName('img')[0];
     img.style.left = '0px';
 
-    function catWalk() {
-      if (img.x > outerWidth) {
-        img.style.left = '-300px';
-      }
-      img.style.left = `${(parseInt(img.style.left) + 10)}px`;
-    }
+    let walkForwards = true;
 
-    setInterval(catWalk, 50);
+    function catWalk() {
+      let currentLeft = parseInt(img.style.left);
+
+      if (walkForwards && (currentLeft > (window.innerWidth - img.width))) {
+        walkForwards = false;
+      }
+      if (!walkForwards && (currentLeft <= 0)) {
+        walkForwards = true;
+      }
+
+      if (walkForwards) {
+        img.style.left = (currentLeft + 10) + 'px';
+      } else {
+        img.style.left = (currentLeft - 10) + 'px';
+      }
+    }
+    window.setInterval(catWalk, 50);
   </script>
 
 </body>

@@ -36,6 +36,12 @@
   </label>
   <button id="area-button">Calculate</button>
   <br><br>
+
+  <label>Calculate cascading operations with a number:
+    <input type="number" id="all-input" size="2">
+  </label>
+  <button id="all-button">Calculate</button>
+  <br><br>
   <div id="solution"></div>
 
   <script>
@@ -48,6 +54,8 @@
     const percentButton = document.getElementById('percent-button');
     const areaInput = document.getElementById('area-input');
     const areaButton = document.getElementById('area-button');
+    const allInput = document.getElementById('all-input');
+    const allButton = document.getElementById('all-button');
     const solutionDiv = document.getElementById('solution');
 
     function squareNumber(number) {
@@ -74,10 +82,27 @@
       return result;
     }
 
+    function calculateEverything(number) {
+      const halfResult = halfNumber(number);
+      const squaredResult = squareNumber(halfResult);
+      const areaResult = areaOfCircle(squaredResult);
+      const percentResult = percentOf(areaResult, squaredResult);
+
+      solutionDiv.innerHTML = `
+        Half: ${halfResult}<br>
+        Square: ${squaredResult}<br>
+        Area: ${areaResult}<br>
+        Percent: ${percentResult}%
+      `;
+
+      return percentResult;
+    }
+
     squareButton.addEventListener('click', () => squareNumber(squareInput.value));
     halfButton.addEventListener('click', () => halfNumber(halfInput.value));
     percentButton.addEventListener('click', () => percentOf(percent1Input.value, percent2Input.value));
     areaButton.addEventListener('click', () => areaOfCircle(areaInput.value));
+    allButton.addEventListener('click', () => calculateEverything(allInput.value));
   </script>
 
 </body>

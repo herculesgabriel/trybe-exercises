@@ -60,7 +60,7 @@
 
     function squareNumber(number) {
       const squaredNumber = number ** 2;
-      solutionDiv.innerText = `The result of squaring the number ${number} is ${squaredNumber}.`;
+      solutionDiv.innerText = `The result of squaring the number ${number} is ${squaredNumber.toFixed(2)}.`;
       return squaredNumber;
     }
 
@@ -72,13 +72,13 @@
 
     function percentOf(number1, number2) {
       const percent = (number1 * 100) / number2;
-      solutionDiv.innerText = `${number1} is ${percent}% of ${number2}`;
+      solutionDiv.innerText = `${number1} is ${percent.toFixed(2)}% of ${number2}`;
       return percent;
     }
 
     function areaOfCircle(radius) {
       const result = 3.14159265359 * (radius ** 2);
-      solutionDiv.innerText = `The area for a circle with radius ${radius} is ${result}`;
+      solutionDiv.innerText = `The area for a circle with radius ${radius} is ${result.toFixed(2)}`;
       return result;
     }
 
@@ -90,9 +90,9 @@
 
       solutionDiv.innerHTML = `
         Half: ${halfResult}<br>
-        Square: ${squaredResult}<br>
-        Area: ${areaResult}<br>
-        Percent: ${percentResult}%
+        Square: ${squaredResult.toFixed(2)}<br>
+        Area: ${areaResult.toFixed(2)}<br>
+        Percent: ${percentResult.toFixed(2)}%
       `;
 
       return percentResult;

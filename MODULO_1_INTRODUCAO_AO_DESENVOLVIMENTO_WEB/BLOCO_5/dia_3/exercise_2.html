@@ -38,6 +38,23 @@
   <br><br>
   <div id="solution"></div>
 
+  <script>
+    const squareInput = document.getElementById('square-input');
+    const squareButton = document.getElementById('square-button');
+    const halfInput = document.getElementById('half-input');
+    const halfButton = document.getElementById('half-button');
+    const percent1Input = document.getElementById('percent1-input');
+    const percent2Input = document.getElementById('percent2-input');
+    const percentButton = document.getElementById('percent-button');
+    const areaInput = document.getElementById('area-input');
+    const areaButton = document.getElementById('area-button');
+    const solutionDiv = document.getElementById('solution');
+
+    squareButton.addEventListener('click', () => squareNumber(squareInput.value));
+    squareButton.addEventListener('click', () => halfNumber(halfInput.value));
+    squareButton.addEventListener('click', () => percentOf(percent1Input.value, percent2Input.value));
+    squareButton.addEventListener('click', () => areaOfCircle(areaInput.value));
+  </script>
 
 </body>
 

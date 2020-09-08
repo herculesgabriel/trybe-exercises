@@ -15,6 +15,9 @@
     img.style.left = '0px';
 
     function catWalk() {
+      if (img.x > outerWidth) {
+        img.style.left = '-300px';
+      }
       img.style.left = `${(parseInt(img.style.left) + 10)}px`;
     }
 

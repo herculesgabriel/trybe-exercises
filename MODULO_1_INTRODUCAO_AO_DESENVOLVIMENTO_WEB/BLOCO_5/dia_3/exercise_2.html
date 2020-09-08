@@ -68,8 +68,10 @@
       return percent;
     }
 
-    function areaOfCircle(number) {
-
+    function areaOfCircle(radius) {
+      const result = 3.14159265359 * (radius ** 2);
+      solutionDiv.innerText = `The area for a circle with radius ${radius} is ${result}`;
+      return result;
     }
 
     squareButton.addEventListener('click', () => squareNumber(squareInput.value));

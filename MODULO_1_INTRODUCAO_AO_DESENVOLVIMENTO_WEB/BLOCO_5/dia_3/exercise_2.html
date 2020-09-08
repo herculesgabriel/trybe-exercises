@@ -50,6 +50,24 @@
     const areaButton = document.getElementById('area-button');
     const solutionDiv = document.getElementById('solution');
 
+    function squareNumber(number) {
+      const squaredNumber = number ** 2;
+      solutionDiv.innerText = `The result of squaring the number ${number} is ${squaredNumber}.`;
+      return squaredNumber;
+    }
+
+    function halfNumber(number) {
+      
+    }
+
+    function percentOf(number) {
+      
+    }
+
+    function areaOfCircle(number) {
+      
+    }
+
     squareButton.addEventListener('click', () => squareNumber(squareInput.value));
     squareButton.addEventListener('click', () => halfNumber(halfInput.value));
     squareButton.addEventListener('click', () => percentOf(percent1Input.value, percent2Input.value));

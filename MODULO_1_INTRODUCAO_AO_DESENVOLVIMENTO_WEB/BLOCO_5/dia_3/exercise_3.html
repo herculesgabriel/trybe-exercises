@@ -68,7 +68,6 @@
         <p>You may want to consider using JavaScript's built in <a href="http://www.w3schools.com/js/js_obj_math.asp"
             target="_blank">Maths object</a> to round the number you get in your result to a more reasonable one.</p>
 
-
         <h2>Extensions</h2>
         <ol>
           <li>
@@ -80,7 +79,15 @@
           </li>
         </ol>
 
+        <script>
+          const img = document.createElement('img');
 
+          img.src = 'assets/img1.jpg';
+          img.addEventListener('mouseover', () => {img.src='assets/img2.jpg'});
+          img.addEventListener('mouseout', () => {img.src='assets/img1.jpg'});
+          
+          divPageContent.appendChild(img);
+        </script>
 
     </div>
   </div>

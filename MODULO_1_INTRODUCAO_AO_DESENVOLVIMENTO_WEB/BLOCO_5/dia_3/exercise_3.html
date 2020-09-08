@@ -32,7 +32,9 @@
           const divExample = document.querySelector('.exampleblock');
           const clickmeButton = document.createElement('button');
           clickmeButton.textContent = 'CLICK ME';
-          clickmeButton.addEventListener('click', () => {alert('You clicked the button')})
+          clickmeButton.addEventListener('click', () => {
+            alert('You clicked the button')
+          })
           divExample.appendChild(clickmeButton);
         </script>
 
@@ -50,7 +52,17 @@
         </p>
 
         <script language="javascript" type="text/javascript">
+          const gamePrice = 39.99;
+          const discount = 0.20;
 
+          const calculateButton = document.createElement('button');
+          calculateButton.textContent = 'CALCULATE DISCOUNT';
+          calculateButton.addEventListener('click', () => {
+            alert(`£${(gamePrice * discount).toFixed(2)} off!`)
+          });
+
+          const divPageContent = document.getElementById('pagecontent');
+          divPageContent.appendChild(calculateButton);
         </script>
 
         <p>You may want to consider using JavaScript's built in <a href="http://www.w3schools.com/js/js_obj_math.asp"

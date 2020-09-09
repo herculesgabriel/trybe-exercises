@@ -15,14 +15,23 @@ selectFontFamily.addEventListener('change', () => { changeFontFamily(selectFontF
 
 function changeBackground(color) {
   body.style.backgroundColor = color;
+  setCookies('bgcolor', color);
 
-  if (color === 'black') body.style.color = 'white';
-  if (color === 'white') body.style.color = 'black';
-  if (color === 'LightYellow') body.style.color = 'black';
+  if (color === 'black') {
+    body.style.color = 'white';
+    setCookies('textcolor', 'white');
+  }
+  if (color === 'white') {
+    body.style.color = 'black';
+    setCookies('textcolor', 'black');
+  }
+  if (color === 'LightYellow') {
+    body.style.color = 'black';
+    setCookies('textcolor', 'black');
+  }
 }
 
 function changeTextColor(color) {
-  let backgroundColor = body.style.backgroundColor;
 
   if (color !== 'auto') {
     body.style.color = color;
@@ -38,14 +47,52 @@ function checkBackgroundColor() {
 
 
 function changeFontFamily(fontFamily) {
+  setCookies('fontfamily', fontFamily);
   body.style.fontFamily = fontFamily;
 
 }
 
 function changeFontSize(fontSize) {
+  setCookies('fontsize', fontSize);
   body.style.fontSize = `${fontSize}em`;
 }
 
 function changeLineSpacing(lineSpacing) {
+  setCookies('lineheight', lineSpacing);
   body.style.lineHeight = lineSpacing;
 }
+
+function applyUserPreferences(preferences) {
+  changeBackground(preferences.bgcolor);
+  changeTextColor(preferences.textcolor);
+  changeFontSize(preferences.fontsize);
+  changeLineSpacing(preferences.lineheight);
+  changeFontFamily(preferences.fontfamily);
+}
+
+function setCookies(property, value) {
+  user_preferences[property] = `${value}`;
+  console.log(user_preferences);
+}
+
+let user_preferences = {
+  bgcolor: 'white',
+  textcolor: 'black',
+  fontsize: '1em',
+  lineheight: '1',
+  fontfamily: 'serif'
+};
+
+applyUserPreferences(user_preferences);
+
+localStorage.setItem("user_settings", JSON.stringify(user_preferences));
+// let prefs = JSON.parse(localStorage.getItem("user_settings"));
+// console.log(prefs);
+
+/*
+sessionStorage.length
+sessionStorage.setItem("firstname", "Adam")
+sessionStorage.getItem("firstname"))
+sessionStorage.removeItem("lastname")
+sessionStorage.clear()
+*/

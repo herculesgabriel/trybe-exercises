@@ -5,4 +5,8 @@ bgColorSelect.addEventListener('change', () => {changeBackground(bgColorSelect.v
 
 function changeBackground(color) {
   body.style.backgroundColor = color;
+  
+  if (color === 'black') body.style.color = 'white';
+  if (color === 'white') body.style.color = 'black';
+  if (color === 'LightYellow') body.style.color = 'black';
 }

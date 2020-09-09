@@ -77,10 +77,9 @@
     <h2>Preferências</h2>
 
     <div>
-      <h3>
-        Cor de fundo:
-      </h3>
-      <select name="background-color" id="bg-color">
+      <h3>Cor de fundo:</h3>
+
+      <select name="background-color" id="background-color">
         <optgroup label="Selecione uma cor">
           <option value="white">Branco</option>
           <option value="black">Preto</option>
@@ -88,10 +87,9 @@
         </optgroup>
       </select>
 
-      <h3>
-        Cor do texto:
-      </h3>
-      <select name="text-color" id="text-color-select">
+      <h3>Cor do texto:</h3>
+
+      <select name="text-color-select" id="text-color-select">
         <optgroup label="Selecione uma cor">
           <option value="white">Auto</option>
           <option value="black">Vermelho</option>
@@ -111,29 +109,27 @@
       </label>
     </div>
 
-    <h3>
-      Tamanho da fonte:
-    </h3>
+    <h3>Tamanho da fonte:</h3>
 
-    <label for="vol">Tamanho (entre 1 e 5):</label>
-    <input type="range" id="vol" name="vol" min="1" max="5">
+    <label for="font-size">Tamanho (entre 1 e 5):</label>
+    <input type="range" id="font-size" name="font-size" min="1" max="5">
 
-    <h3>
-      Espaçamento entre linhas:
-    </h3>
+    <h3>Espaçamento entre linhas:</h3>
 
-    <label for="vol">Espaçamento (entre 1 e 3):</label>
-    <input type="range" id="vol" name="vol" min="1" max="3" step="0.5">
-    
-    <!--
+    <label for="spacing">Espaçamento (entre 1 e 3):</label>
+    <input type="range" id="spacing" name="spacing" min="1" max="3" step="0.5">
 
-    Tipo da fonte:
-    - serif
-    - sans-serif
-    - monospace
-    - cursive
-    - fantasy
-  -->
+    <h3>Tipo da fonte:</h3>
+
+    <select name="font-family" id="font-family">
+      <optgroup label="Selecione um tipo de fonte">
+        <option value="serif">serif</option>
+        <option value="sans-serif">sans-serif</option>
+        <option value="monospace">monospace</option>
+        <option value="cursive">cursive</option>
+        <option value="fantasy">fantasy</option>
+      </optgroup>
+    </select>
 
   </aside>
 

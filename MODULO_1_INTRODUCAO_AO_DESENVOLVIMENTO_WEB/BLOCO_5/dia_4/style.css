@@ -1,4 +1,22 @@
 body {
   margin: 0 auto;
-  padding: 50px 200px;
+}
+
+main {
+  border: 1px solid red;
+  float: left;
+  width: 70%;
+  
+  padding: 15px;
+  margin: 25px 0 25px 25px;
+}
+
+aside {
+  border: 1px solid green;
+  float: right;
+  width: 20%;
+  
+  padding: 5px;
+  margin-top: 25px;
+  margin-right: 8px;
 }

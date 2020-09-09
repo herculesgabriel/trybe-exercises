@@ -24,16 +24,18 @@ function changeBackground(color) {
 function changeTextColor(color) {
   let backgroundColor = body.style.backgroundColor;
 
-  if (color === 'auto') {
-    if (backgroundColor === 'black') {
-      body.style.color = 'white';
-    } else if (backgroundColor === 'white' || backgroundColor === 'lightyellow') {
-      body.style.color = 'black';
-    }
-  } else {
+  if (color !== 'auto') {
     body.style.color = color;
+  } else {
+    checkBackgroundColor();
   }
 }
+
+function checkBackgroundColor() {
+  return (body.style.backgroundColor === 'black') ?
+    body.style.color = 'white' : body.style.color = 'black';
+}
+
 
 function changeFontFamily(fontFamily) {
   body.style.fontFamily = fontFamily;

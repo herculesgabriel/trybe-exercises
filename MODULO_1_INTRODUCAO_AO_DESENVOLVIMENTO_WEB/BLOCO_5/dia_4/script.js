@@ -35,7 +35,8 @@ function changeTextColor(color) {
   }
 }
 
-function changeFontFamily() {
+function changeFontFamily(fontFamily) {
+  body.style.fontFamily = fontFamily;
 
 }
 

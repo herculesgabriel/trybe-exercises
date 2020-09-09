@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Exercise 5.4</title>
+</head>
+
+<body id="root">
+
+  <main>
+    <h1>
+      "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+    </h1>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit vulputate elementum. Mauris eget
+      congue
+      urna. Mauris sed ante quis purus consectetur bibendum sed ultrices augue. Fusce ultricies nulla vitae felis
+      lacinia,
+      a dignissim est laoreet. Aenean iaculis consectetur felis sit amet gravida. In tempus, nisi et faucibus aliquam,
+      urna lectus euismod sapien, et porttitor lectus leo vel arcu. Suspendisse aliquet ex ut purus pulvinar cursus.
+      Curabitur id enim ligula. Phasellus maximus, magna a vestibulum pharetra, risus felis semper arcu, eu aliquet
+      lacus
+      sem ac quam. Praesent suscipit ligula sed risus dapibus, ac gravida augue aliquam. Nullam eget nibh lorem.
+      Aenean
+      maximus sem neque, sed consectetur erat auctor quis.
+    </p>
+    <p>
+      Quisque feugiat sed quam sit amet fringilla. Nunc tristique malesuada ligula, at rutrum augue. Integer faucibus
+      odio
+      non risus porttitor, eu aliquam libero lobortis. Duis in arcu et odio placerat varius. Praesent vulputate
+      lacinia
+      ligula sit amet porttitor. Vivamus diam augue, accumsan malesuada lobortis non, dignissim quis nibh.
+      Pellentesque
+      lectus elit, placerat vitae eros a, dictum maximus dui. In scelerisque ac nisl in pharetra. Proin finibus massa
+      in
+      mattis accumsan. In ut libero et justo laoreet dignissim nec sit amet sapien.
+    </p>
+  </main>
+
+  <aside>
+    <h2>Preferências</h2>
+
+    <div>
+      <h3>Cor de fundo:</h3>
+
+      <select id="background-color">
+        <optgroup label="Selecione uma cor">
+          <option value="white">Branco</option>
+          <option value="black">Preto</option>
+          <option value="lightyellow">Sépia</option>
+        </optgroup>
+      </select>
+
+      <h3>Cor do texto:</h3>
+
+      <select id="text-color-select">
+        <optgroup label="Selecione uma cor">
+          <option value="auto">Auto</option>
+          <option value="red">Vermelho</option>
+          <option value="yellow">Amarelo</option>
+          <option value="green">Verde</option>
+          <option value="blue">Azul</option>
+          <option value="pink">Rosa</option>
+          <option value="purple">Roxo</option>
+          <option value="white">Branco</option>
+          <option value="black">Preto</option>
+        </optgroup>
+      </select> <br>
+
+      <label for="text-color-input">
+        Selecione sua própria cor:
+        <input type="color" id="text-color-input">
+      </label>
+    </div>
+
+    <h3>Tamanho da fonte:</h3>
+
+    <label for="font-size">Tamanho (entre 1 e 5):</label>
+    <input type="range" id="font-size" name="font-size" min="1" max="2" step="0.2" value="1">
+
+    <h3>Espaçamento entre linhas:</h3>
+
+    <label for="spacing">Espaçamento (entre 1 e 5):</label>
+    <input type="range" id="spacing" name="spacing" min="1" max="2" step="0.2" value="1">
+
+    <h3>Tipo da fonte:</h3>
+
+    <select name="font-family" id="font-family">
+      <optgroup label="Selecione um tipo de fonte">
+        <option value="serif">serif</option>
+        <option value="sans-serif">sans-serif</option>
+        <option value="monospace">monospace</option>
+      </optgroup>
+    </select>
+
+  </aside>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

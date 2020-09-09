@@ -44,6 +44,6 @@ function changeFontSize(fontSize) {
   body.style.fontSize = `${fontSize}em`;
 }
 
-function changeLineSpacing() {
-
+function changeLineSpacing(lineSpacing) {
+  body.style.lineHeight = lineSpacing;
 }

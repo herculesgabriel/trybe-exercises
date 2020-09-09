@@ -1,8 +1,11 @@
 const body = document.getElementById('root');
 const bgColorSelect = document.getElementById('background-color');
 const textColorSelect = document.getElementById('text-color-select');
+const inputColor = document.getElementById('text-color-input');
 
 bgColorSelect.addEventListener('change', () => { changeBackground(bgColorSelect.value) });
+textColorSelect.addEventListener('change', () => { changeTextColor(textColorSelect.value) });
+inputColor.addEventListener('change', () => { changeTextColor(inputColor.value) });
 
 function changeBackground(color) {
   body.style.backgroundColor = color;
@@ -11,8 +14,6 @@ function changeBackground(color) {
   if (color === 'white') body.style.color = 'black';
   if (color === 'LightYellow') body.style.color = 'black';
 }
-
-textColorSelect.addEventListener('change', () => { changeTextColor(textColorSelect.value) });
 
 function changeTextColor(color) {
   let backgroundColor = body.style.backgroundColor;

@@ -14,26 +14,26 @@ inputSpacing.addEventListener('change', () => { changeLineSpacing(inputSpacing.v
 selectFontFamily.addEventListener('change', () => { changeFontFamily(selectFontFamily.value) });
 
 function changeBackground(color) {
-  body.style.backgroundColor = color;
   setCookies('bgcolor', color);
+  body.style.backgroundColor = color;
 
   if (color === 'black') {
-    body.style.color = 'white';
     setCookies('textcolor', 'white');
+    body.style.color = 'white';
   }
   if (color === 'white') {
-    body.style.color = 'black';
     setCookies('textcolor', 'black');
+    body.style.color = 'black';
   }
-  if (color === 'LightYellow') {
-    body.style.color = 'black';
+  if (color === 'lightyellow') {
     setCookies('textcolor', 'black');
+    body.style.color = 'black';
   }
 }
 
 function changeTextColor(color) {
-
   if (color !== 'auto') {
+    setCookies('textcolor', color);
     body.style.color = color;
   } else {
     checkBackgroundColor();
@@ -41,15 +41,18 @@ function changeTextColor(color) {
 }
 
 function checkBackgroundColor() {
-  return (body.style.backgroundColor === 'black') ?
-    body.style.color = 'white' : body.style.color = 'black';
+  if (body.style.backgroundColor === 'black') {
+    setCookies('textcolor', 'white');
+    body.style.color = 'white';
+  } else {
+    setCookies('textcolor', 'black');
+    body.style.color = 'black';
+  }
 }
-
 
 function changeFontFamily(fontFamily) {
   setCookies('fontfamily', fontFamily);
   body.style.fontFamily = fontFamily;
-
 }
 
 function changeFontSize(fontSize) {
@@ -71,8 +74,7 @@ function applyUserPreferences(preferences) {
 }
 
 function setCookies(property, value) {
-  user_preferences[property] = `${value}`;
-  console.log(user_preferences);
+  user_preferences[property] = value;
 }
 
 let user_preferences = {

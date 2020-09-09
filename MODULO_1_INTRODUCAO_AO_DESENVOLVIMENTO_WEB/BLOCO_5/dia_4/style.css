@@ -11,7 +11,7 @@ main {
   margin: 25px 0 25px 25px;
 }
 
-aside {
+aside {  
   border: 1px solid green;
   float: right;
   width: 20%;
@@ -19,4 +19,8 @@ aside {
   padding: 5px;
   margin-top: 25px;
   margin-right: 8px;
+}
+
+aside div {
+  display: inline-block;
 }

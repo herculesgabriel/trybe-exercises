@@ -1,11 +1,17 @@
 const body = document.getElementById('root');
-const bgColorSelect = document.getElementById('background-color');
-const textColorSelect = document.getElementById('text-color-select');
+const selectBgColor = document.getElementById('background-color');
+const selectTextColor = document.getElementById('text-color-select');
+const selectFontFamily = document.getElementById('font-family');
 const inputColor = document.getElementById('text-color-input');
+const inputFontSize = document.getElementById('font-size');
+const inputSpacing = document.getElementById('spacing');
 
-bgColorSelect.addEventListener('change', () => { changeBackground(bgColorSelect.value) });
-textColorSelect.addEventListener('change', () => { changeTextColor(textColorSelect.value) });
+selectBgColor.addEventListener('change', () => { changeBackground(selectBgColor.value) });
+selectTextColor.addEventListener('change', () => { changeTextColor(selectTextColor.value) });
 inputColor.addEventListener('change', () => { changeTextColor(inputColor.value) });
+inputFontSize.addEventListener('change', () => { changeFontSize(inputFontSize.value) });
+inputSpacing.addEventListener('change', () => { changeLineSpacing(inputSpacing.value) });
+selectFontFamily.addEventListener('change', () => { changeFontFamily(selectFontFamily.value) });
 
 function changeBackground(color) {
   body.style.backgroundColor = color;
@@ -27,4 +33,16 @@ function changeTextColor(color) {
   } else {
     body.style.color = color;
   }
+}
+
+function changeFontFamily() {
+
+}
+
+function changeFontSize(fontSize) {
+  body.style.fontSize = `${fontSize}em`;
+}
+
+function changeLineSpacing() {
+
 }

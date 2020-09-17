@@ -1,3 +1,5 @@
+const statesList = document.getElementById('state');
+
 const states = [
   ['Acre', 'AC'],
   ['Alagoas', 'AL'],
@@ -27,3 +29,14 @@ const states = [
   ['Tocantins', 'TO'],
   ['Distrito Federal', 'DF'],
 ];
+
+function getStates() {
+  states.forEach((state) => {
+    const option = document.createElement('option');
+    option.setAttribute('value', state[1]);
+    option.textContent = state[0];
+    statesList.appendChild(option);
+  });
+}
+
+getStates();

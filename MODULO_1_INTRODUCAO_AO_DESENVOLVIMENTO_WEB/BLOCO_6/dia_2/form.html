@@ -4,83 +4,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/bulma.min.css">
   <title>Formulário</title>
+
+  <style>
+    body {
+      margin: 20px 30px;
+    }
+  </style>
 </head>
 
 <body>
 
   <form action="" method="get">
-    <fieldset>
-      <p>
-        <label for="name">Nome</label>
-        <input type="text" id="name" name="name" required>
-      </p>
 
-      <p>
-        <label for="email">E-mail</label>
-        <input type="text" id="email" name="email" maxlength="50" required>
-      </p>
 
-      <p>
-        <label for="cpf">CPF</label>
-        <input type="text" id="cpf" name="cpf" maxlength="11" required>
-      </p>
 
-      <p>
-        <label for="address">Endereço</label>
-        <input type="text" id="address" name="address" maxlength="20" required>
-      </p>
+    <div class="field">
+      <label class="label" for="name">Nome</label>
+      <input class="input" type="text" id="name" name="name" required>
+    </div>
+    <div class="field">
+      <label class="label" for="email">E-mail</label>
+      <input class="input" type="text" id="email" name="email" maxlength="50" required>
+    </div>
 
-      <p>
-        <label for="city">Cidade</label>
-        <input type="text" id="city" name="city" maxlength="28" required>
-      </p>
+    <div class="field">
+      <label class="label" for="cpf">CPF</label>
+      <input class="input" type="text" id="cpf" name="cpf" maxlength="11" required>
+    </div>
 
-      <p>
-        <label for="state">Estado</label>
+    <div class="field">
+      <label class="label" for="address">Endereço</label>
+      <input class="input" type="text" id="address" name="address" maxlength="20" required>
+    </div>
 
-        <select name="state" id="state" required>
-          <option>-- Escolha um estado --</option>
-        </select>
-      </p>
+    <div class="field">
+      <label class="label" for="city">Cidade</label>
+      <input class="input" type="text" id="city" name="city" maxlength="28" required>
+    </div>
 
-      <p>
-        <label for="house_type">
+    <div class="field">
+      <label class="label" for="state">Estado</label>
+
+      <div class="control">
+        <div class="select">
+          <select name="state" id="state" required>
+            <option>-- Escolha um estado --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <label class="radio" for="house">
           <input type="radio" id="house" name="house_type" value="0" required>
           Casa
         </label>
-        <label for="house_type">
+        <label class="radio" for="apartment">
           <input type="radio" id="apartment" name="house_type" value="1" required>
           Apartamento
         </label>
-      </p>
-
-    </fieldset>
+      </div>
+    </div>
 
     <fieldset>
-      <p>
-        <label for="summary">Resumo do currículo</label>
-        <textarea name="summary" id="summary" cols="60" rows="10" maxlength="1000" required></textarea>
-      </p>
-      <p>
-        <label for="position">Cargo</label>
-        <input type="text" name="position" id="position" maxlength="40" required>
-      </p>
-      <p>
-        <label for="description">Descrição do cargo</label>
-        <input type="text" name="description" id="description" maxlength="500" required>
-      </p>
+      <div class="field">
+        <label class="label" for="summary">Resumo do currículo</label>
+        <div class="control">
+          <textarea class="textarea" placeholder="Nos conte o que há de mais importante no seu currículo" name="summary"
+            id="summary" cols="60" rows="10" maxlength="1000" required></textarea>
+        </div>
+      </div>
 
-      <p>
-        <label for="date">Data de início</label>
-        <input type="text" id="date" name="date" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}" placeholder="dd/mm/aaaa" required>
-      </p>
+      <div class="field">
+        <label class="label" for="position">Cargo</label>
+        <input class="input" type="text" name="position" id="position" maxlength="40" required>
+      </div>
 
-      <button type="submit" id="button-submit">Enviar</button>
-      <button type="reset" id="button-reset">Limpar</button>
+      <div class="field">
+        <label class="label" for="description">Descrição do cargo</label>
+        <input class="input" type="text" name="description" id="description" maxlength="500" required>
+      </div>
+
+      <div class="field">
+        <label class="label" for="date">Data de início</label>
+        <input class="input" type="text" id="date" name="date" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"
+          placeholder="dd/mm/aaaa" required>
+      </div>
+
+      <div class="fiel is-grouped">
+        <div class="control">
+          <button class="button is-link" type="submit" id="button-submit">Enviar</button>
+          <button class="button is-link is-light" type="reset" id="button-reset">Limpar</button>
+        </div>
+      </div>
 
     </fieldset>
+
 
   </form>
 

@@ -1,3 +1,4 @@
+const picker = new Pikaday({ field: document.getElementById('datepicker') });
 const statesList = document.getElementById('state');
 const buttonSubmit = document.getElementById('button-submit');
 const result = document.getElementById('result');
@@ -41,6 +42,7 @@ function getStates() {
   });
 }
 
+/*
 function validateDate() {
   const date = document.getElementById('date').value;
   const day = date.substr(0, 2);
@@ -53,6 +55,7 @@ function validateDate() {
 
   return validDay && validMonth && validYear;
 }
+*/
 
 function saveData() {
   let dataList = {

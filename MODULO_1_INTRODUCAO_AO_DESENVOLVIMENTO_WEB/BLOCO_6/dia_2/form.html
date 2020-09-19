@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+
   <title>Formulário</title>
 
 </head>
@@ -89,9 +91,8 @@
           </div>
 
           <div class="field">
-            <label class="label" for="date">Data de início</label>
-            <input class="input" type="text" id="date" name="date" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"
-              placeholder="dd/mm/aaaa" required>
+            <label class="label" for="datepicker">Data de início</label>
+            <input class="input" type="text" id="datepicker" name="datepicker" required>
           </div>
 
           <div class="fiel is-grouped">
@@ -110,6 +111,7 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
   <script src="script.js"></script>
 
 </body>

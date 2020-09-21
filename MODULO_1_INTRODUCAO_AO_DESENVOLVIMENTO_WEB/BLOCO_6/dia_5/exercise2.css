@@ -1,0 +1,142 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Ubuntu, sans-serif;
+  background-color: #edc988;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+footer {
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .container {
+    min-width: 350px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-right: 20px;
+    align-items: center;
+  }
+
+  header li {
+    display: inline-block;
+    width: 40px;
+    margin: 0 7px;
+  }
+
+  .asides {
+    order: 1;
+  }
+
+  .main-content {
+  }
+
+  footer {
+    order: 2;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1199px) {
+  .container {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-right: 20px;
+    align-items: center;
+  }
+
+  header li {
+    display: inline-block;
+    width: 40px;
+    margin: 0 7px;
+  }
+
+  .aside-one {
+    order: 1;
+    text-align: center;
+  }
+
+  .aside-one li {
+    display: inline-block;
+    padding: 8px;
+  }
+
+  .aside-two {
+    order: 3;
+  }
+
+  .main-content {
+    order: 2;
+  }
+
+  footer {
+    order: 4;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1100px;
+    margin: 30px auto;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header li {
+    display: inline-block;
+    width: 90px;
+  }
+
+  .aside-one {
+    float: right;
+    margin-right: 1%;
+    width: 250px;
+    text-align: center;
+  }
+
+  .aside-two {
+    float: right;
+    margin-top: 350px;
+    margin-right: -249px;
+    width: 250px;
+    text-align: center;
+  }
+
+  .aside-one li {
+    list-style: none;
+  }
+
+  .aside-two li {
+    list-style: none;
+  }
+
+  footer {
+    clear: both;
+  }
+}

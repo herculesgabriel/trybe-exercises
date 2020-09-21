@@ -99,3 +99,35 @@
   padding: 20px;
   height: 1%;
 }
+
+@media (max-width: 360px) {
+  body {
+    padding: 0;
+    margin-top: 80px;
+  }
+
+  img {
+    width: 80vw;
+  }
+
+  #header {
+    position: fixed;
+    height: 25px;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #aside {
+    display: none;
+  }
+
+  #navigation ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #navigation li a {
+    border-right: none;
+  }
+}

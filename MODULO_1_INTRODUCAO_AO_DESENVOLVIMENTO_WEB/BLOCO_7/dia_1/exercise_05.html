@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 05</title>
+</head>
+
+<body>
+  <button id="click-count">
+    Clique aqui!
+  </button>
+
+  <p id="result"></p>
+
+  <script>
+    const buttonClick = document.querySelector('#click-count');
+    const result = document.querySelector('#result');
+    let clickCount = 0;
+
+    buttonClick.addEventListener('click', () => {
+      clickCount += 1;
+      result.textContent = clickCount;
+    });
+  </script>
+</body>
+
+</html>

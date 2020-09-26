@@ -9,7 +9,17 @@ const skills = [
 const changeString = string => {
   const sentence = 'Tryber x aqui!';
   return sentence.replace('x', string);
-
 };
 
-console.log(changeString('Hercules'));
+const concatStrings = changeString => {
+  skills.sort();
+  let result = `${changeString} Minhas cinco principais habilidades são:`;
+
+  for (const skill of skills) {
+    result += `\n- ${skill}`
+  }
+
+  return result;
+};
+
+console.log(concatStrings(changeString('Hercules')));

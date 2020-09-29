@@ -37,42 +37,31 @@ const getTotalStudents = (allLessons) => {
   return result;
 }
 
-const getValueByNumber = (obj, pos) => {
-  const keys = getKeys(obj);
-  for (const key in keys)
-    if (key == pos) return (obj[keys[key]]);
-}
+const getValueByNumber = (obj, pos) => getValues(obj)[pos];
 
-const verifyPair = (obj, key, value) => {
-  return Object.entries(obj).some((arr) => (arr[0] === key && arr[1] === value));
-}
+const verifyPair = (obj, key, value) => obj[key] === value;
 
 const getStudentsWhoWatched = (obj) => obj.numeroEstudantes;
 
-const reportTemplate = (string, ...keys) => {
-  let text = string.slice();
-  const result = [];
-  return function (data) {
-    for (const lesson in data) {
-      keys.forEach((key, index) => {
-        text[index] = text[index] + data[lesson][key];
-      });
-
-      result.push(text);
-      text = string.slice();
+const getInfo = (obj, name) => {
+  const lessons = []
+  let numberOfStudents = 0;
+  for (const lesson in obj) {
+    if (obj[lesson]['professor'] === name) {
+      lessons.push(obj[lesson]['materia']);
+      numberOfStudents += obj[lesson]['numeroEstudantes'];
     }
-    return result.join('');
   }
+  return { lessons, numberOfStudents }
 }
 
-const getReport = reportTemplate`- Professor(a): ${'professor'} - Turno da ${'turno'}
-Aula de ${'materia'}: ${'numeroEstudantes'} estudantes\n`;
+const createReport = (data, name) => Object.assign({ professor: name }, getInfo(data, name));
 
-console.log(getKeys(lesson1))
-console.log(getSize(lesson1))
-console.log(getValues(lesson1))
-console.log(getTotalStudents(allLessons))
-console.log(getValueByNumber(lesson1, 0))
-console.log(verifyPair(lesson1, 'turno', 'manhã'))
-console.log(getStudentsWhoWatched(lesson1))
-console.log(getReport(allLessons))
+// console.log(getKeys(lesson1))
+// console.log(getSize(lesson1))
+// console.log(getValues(lesson1))
+// console.log(getTotalStudents(allLessons))
+// console.log(getValueByNumber(lesson1, 0))
+// console.log(verifyPair(lesson1, 'turno', 'manhã'))
+// console.log(getStudentsWhoWatched(lesson1))
+// console.log(createReport(allLessons, 'Maria Clara'))

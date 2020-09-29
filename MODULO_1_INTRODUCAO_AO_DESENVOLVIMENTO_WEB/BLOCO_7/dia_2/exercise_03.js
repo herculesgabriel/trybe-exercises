@@ -43,9 +43,7 @@ const getValueByNumber = (obj, pos) => {
     if (key == pos) return (obj[keys[key]]);
 }
 
-const verifyPair = (obj, key, value) => {
-  return Object.entries(obj).some((arr) => (arr[0] === key && arr[1] === value));
-}
+const verifyPair = (obj, key, value) => obj[key] === value;
 
 const getStudentsWhoWatched = (obj) => obj.numeroEstudantes;
 
@@ -68,11 +66,11 @@ const reportTemplate = (string, ...keys) => {
 const getReport = reportTemplate`- Professor(a): ${'professor'} - Turno da ${'turno'}
 Aula de ${'materia'}: ${'numeroEstudantes'} estudantes\n`;
 
-console.log(getKeys(lesson1))
-console.log(getSize(lesson1))
-console.log(getValues(lesson1))
-console.log(getTotalStudents(allLessons))
-console.log(getValueByNumber(lesson1, 0))
-console.log(verifyPair(lesson1, 'turno', 'manhã'))
-console.log(getStudentsWhoWatched(lesson1))
-console.log(getReport(allLessons))
+// console.log(getKeys(lesson1))
+// console.log(getSize(lesson1))
+// console.log(getValues(lesson1))
+// console.log(getTotalStudents(allLessons))
+// console.log(getValueByNumber(lesson1, 0))
+// console.log(verifyPair(lesson1, 'turno', 'manhã'))
+// console.log(getStudentsWhoWatched(lesson1))
+// console.log(getReport(allLessons))

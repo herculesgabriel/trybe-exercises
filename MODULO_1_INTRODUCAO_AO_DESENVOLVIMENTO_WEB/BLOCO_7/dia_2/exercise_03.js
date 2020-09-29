@@ -37,11 +37,7 @@ const getTotalStudents = (allLessons) => {
   return result;
 }
 
-const getValueByNumber = (obj, pos) => {
-  const keys = getKeys(obj);
-  for (const key in keys)
-    if (key == pos) return (obj[keys[key]]);
-}
+const getValueByNumber = (obj, pos) => getValues(obj)[pos];
 
 const verifyPair = (obj, key, value) => obj[key] === value;
 

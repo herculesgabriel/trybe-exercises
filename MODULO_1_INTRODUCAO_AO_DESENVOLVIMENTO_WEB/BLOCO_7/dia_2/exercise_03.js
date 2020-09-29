@@ -47,14 +47,7 @@ const verifyPair = (obj, key, value) => {
   return Object.entries(obj).some((arr) => (arr[0] === key && arr[1] === value));
 }
 
-const getStudentsWhoWatched = (obj) => {
-  let total = 0;
-  for (const key in obj)
-    if (obj[key]['materia'] === 'Matemática')
-      total += obj[key]['numeroEstudantes'];
-
-  return total;
-}
+const getStudentsWhoWatched = (obj) => obj.numeroEstudantes;
 
 const reportTemplate = (string, ...keys) => {
   let text = string.slice();

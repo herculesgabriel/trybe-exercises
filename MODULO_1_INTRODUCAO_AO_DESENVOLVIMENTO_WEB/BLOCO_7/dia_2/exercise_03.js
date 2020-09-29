@@ -26,30 +26,22 @@ addTime(lesson2, 'turno', 'manhã');
 // Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
 const getKeys = (obj) => Object.keys(obj);
 
-// console.log(getKeys(lesson1))
-
 // Crie uma função para mostrar o tamanho de um objeto.
-const getSize = (obj) => Object.keys(obj).length
-
-// console.log(getSize(lesson1))
+const getSize = (obj) => Object.keys(obj).length;
 
 // Crie uma função para listar os valores de um objeto. Essa função deve receber um objeto como parâmetro.
-const getValues = (obj) => Object.values(obj)
+const getValues = (obj) => Object.values(obj);
 
-// console.log(getValues(lesson1))
-
-// Crie um objeto de nome allLessons, que deve agrupar todas as aulas através do Object.assign. Cada chave desse novo objeto será uma aula, sendo essas chaves: lesson1, lesson2 e lesson3. Ao executar o comando console.log(allLessons), a saída deverá ser a seguinte:
-// const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 })
-
-// console.log(allLessons);
+// Crie um objeto de nome allLessons, que deve agrupar todas as aulas através do Object.assign. Cada chave desse novo objeto será uma aula, sendo essas chaves: lesson1, lesson2 e lesson3.
+const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
 
 // Usando o objeto criado no exercício 5, crie uma função que retorne o número total de estudantes em todas as aulas.
-// const getTotalStudents = (objArr) => objArr.reduce((acc, { numeroEstudantes }) => acc + numeroEstudantes, 0)
-const getTotalStudents = (objArr) => objArr
-
-// console.log('---')
-// console.log(getTotalStudents(allLessons))
-// console.log('---')
+const getTotalStudents = (allLessons) => {
+  let result = 0;
+  for (const lesson in allLessons)
+    result += allLessons[lesson]['numeroEstudantes'];
+  return result
+}
 
 // Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto. Por exemplo:
 // console.log(getValueByNumber(lesson1, 0));

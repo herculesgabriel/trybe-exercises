@@ -43,20 +43,10 @@ const getValueByNumber = (obj, pos) => {
     if (key == pos) return (obj[keys[key]])
 }
 
-// Crie uma função que verifique se o par (chave / valor) existe na função. Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave. Exemplo:
-// console.log(verifyPair(lesson3, 'turno', 'noite'));
-// Output: true,
-// console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
-// Output: false
 const verifyPair = (obj, key, value) => {
   return Object.entries(obj).some((arr) => (arr[0] === key && arr[1] === value))
 }
 
-// console.log(verifyPair(lesson3, 'turno', 'noite'))
-// console.log(verifyPair(lesson3, 'materia', 'Maria Clara'))
-
-// Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Use o objeto criado no exercício 5.
-// console.log('')
 const getStudentsWhoWatched = (obj) => {
   let total = 0;
   for (const key in obj)
@@ -66,29 +56,21 @@ const getStudentsWhoWatched = (obj) => {
   return total;
 }
 
-// console.log(getStudentsWhoWatched(allLessons))
+const reportTemplate = (string, ...keys) => {
+  let text = string.slice();
+  const result = [];
+  return function (data) {
+    for (const lesson in data) {
+      keys.forEach((key, index) => {
+        text[index] = text[index] + data[lesson][key];
+      });
 
-// Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5:
-
-/*
-{
-  lesson1: {
-    materia: 'Matemática',
-    numeroEstudantes: 20,
-    professor: 'Maria Clara',
-    turno: 'manhã'
-  },
-  lesson2: {
-    materia: 'História',
-    numeroEstudantes: 20,
-    professor: 'Carlos',
-    turno: 'manhã'
-  },
-  lesson3: {
-    materia: 'Matemática',
-    numeroEstudantes: 10,
-    professor: 'Maria Clara',
-    turno: 'noite'
+      result.push(text);
+      text = string.slice();
+    }
+    return result.join('');
   }
 }
-*/
+
+const getReport = reportTemplate`- Professor(a): ${'professor'} - Turno da ${'turno'}
+Aula de ${'materia'}: ${'numeroEstudantes'} estudantes\n`;

@@ -34,17 +34,17 @@ const getTotalStudents = (allLessons) => {
   let result = 0;
   for (const lesson in allLessons)
     result += allLessons[lesson]['numeroEstudantes'];
-  return result
+  return result;
 }
 
 const getValueByNumber = (obj, pos) => {
   const keys = getKeys(obj);
   for (const key in keys)
-    if (key == pos) return (obj[keys[key]])
+    if (key == pos) return (obj[keys[key]]);
 }
 
 const verifyPair = (obj, key, value) => {
-  return Object.entries(obj).some((arr) => (arr[0] === key && arr[1] === value))
+  return Object.entries(obj).some((arr) => (arr[0] === key && arr[1] === value));
 }
 
 const getStudentsWhoWatched = (obj) => {
@@ -74,3 +74,12 @@ const reportTemplate = (string, ...keys) => {
 
 const getReport = reportTemplate`- Professor(a): ${'professor'} - Turno da ${'turno'}
 Aula de ${'materia'}: ${'numeroEstudantes'} estudantes\n`;
+
+console.log(getKeys(lesson1))
+console.log(getSize(lesson1))
+console.log(getValues(lesson1))
+console.log(getTotalStudents(allLessons))
+console.log(getValueByNumber(lesson1, 0))
+console.log(verifyPair(lesson1, 'turno', 'manhã'))
+console.log(getStudentsWhoWatched(lesson1))
+console.log(getReport(allLessons))

@@ -66,17 +66,16 @@ const books = [
 const expected_result = false;
 
 function authorUnique() {
-
-  for (let index = 0; index < books.length; index++) {
-   if (books.some(book => {
-      return (
-        book.author.birthYear === books[index].author.birthYear &&
-        book.id !== books[index].id
-      );
-    })) {
-      return false;
-    }
-  }
+  return !(
+    books.some(book => {
+      return books.some(comparedBook => {
+        return (
+          book.author.birthYear === comparedBook.author.birthYear &&
+          book.id !== comparedBook.id
+        );
+      })
+    })
+  );
 }
 
 assert.strictEqual(authorUnique(), expected_result);

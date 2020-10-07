@@ -1,4 +1,4 @@
-const sum = require('./sum');
+const sum = require('../src/sum');
 
 describe('sum two numbers', () => {
 

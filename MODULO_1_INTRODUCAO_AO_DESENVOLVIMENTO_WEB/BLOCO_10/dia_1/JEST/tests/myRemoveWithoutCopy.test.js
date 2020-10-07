@@ -1,4 +1,4 @@
-const myRemoveWithoutCopy = require('./myRemoveWithoutCopy');
+const myRemoveWithoutCopy = require('../src/myRemoveWithoutCopy');
 
 describe('receives a number and an array, then return the same array without the given number', () => {
 

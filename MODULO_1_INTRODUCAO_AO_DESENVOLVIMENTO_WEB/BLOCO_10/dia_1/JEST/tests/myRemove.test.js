@@ -1,4 +1,4 @@
-const myRemove = require('./myRemove');
+const myRemove = require('../src/myRemove');
 
 describe('removes an specific item from the given array', () => {
 

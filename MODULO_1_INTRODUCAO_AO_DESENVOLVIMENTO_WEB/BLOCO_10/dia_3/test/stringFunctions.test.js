@@ -1,6 +1,4 @@
-//* A terceira deve receber três strings e concatená-las.
-
-const file = require('../src/02');
+const file = require('../src/stringFunctions');
 
 describe('Mocking functions', () => {
   it('should return a string lowered cased', () => {

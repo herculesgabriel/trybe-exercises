@@ -253,6 +253,27 @@ git push origin
 # delete the last commit
 git checkout HEAD~1
 ```
+## discard untracked files
+# check which files will be deleted
+```
+git clean -n
+```
+# actually delete the files
+```
+git clean -f
+```
+# remove directories
+```
+git clean -f -d
+```
+# remove ignored files
+```
+git clean -f -X
+```
+# remove ignored and non-ignored files
+```
+git clean -f -x
+```
 
 ## Example Situation
 ```

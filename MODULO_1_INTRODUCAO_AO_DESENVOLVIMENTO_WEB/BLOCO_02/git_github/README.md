@@ -275,6 +275,15 @@ git clean -f -X
 git clean -f -x
 ```
 
+# pull with conflict of histories
+```
+git pull origin main --allow-unrelated-histories
+```
+# rename local branch
+```
+git branch -M newName
+```
+
 ## Example Situation
 ```
 # beginning of repository

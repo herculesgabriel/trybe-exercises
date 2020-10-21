@@ -1,0 +1,21 @@
+.App {
+  background-color: teal;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+}
+
+button {
+  background-color: violet;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-family: Ubuntu;
+  font-size: 20px;
+  height: 50px;
+  width: 100px;
+}

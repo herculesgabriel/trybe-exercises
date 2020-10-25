@@ -4,9 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const user = { username: 'joao', password: '1234' };
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App user={user} />
   </React.StrictMode>,
   document.getElementById('root')
 );

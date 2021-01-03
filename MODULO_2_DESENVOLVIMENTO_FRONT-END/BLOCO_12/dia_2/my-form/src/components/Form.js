@@ -11,6 +11,7 @@ class Form extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.fillStates = this.fillStates.bind(this);
+    this.validateCity = this.validateCity.bind(this);
 
     this.state = {
       info: {
@@ -34,6 +35,18 @@ class Form extends Component {
   componentDidMount() {
     this.fillStates();
   };
+
+  validateCity({ target }) {
+    if (target.value.search(/\d/) === 0) {
+      this.setState((prevState) => ({
+        ...prevState,
+        info: {
+          ...prevState.info,
+          city: '',
+        }
+      }));
+    }
+  }
 
   fillStates() {
     getStates.get()
@@ -123,10 +136,16 @@ class Form extends Component {
 
             <div className="group">
               <label htmlFor="city">Cidade:</label>
-              <input type="text" id="city" name="city" maxLength="28" required
-                onChange={this.handleChange} value={this.state.info.city}
+              <input
+                type="text"
+                id="city"
+                name="city"
+                maxLength="28"
+                required
+                onChange={this.handleChange}
+                onBlur={this.validateCity}
+                value={this.state.info.city}
               />
-              {/* // TODO Ao remover o foco desse campo (evento onBlur), verificar se o nome da cidade começa com números. Caso comece, limpar o campo. */}
 
               <label htmlFor="state">Estado:</label>
               <select name="state" id="state" required onChange={this.handleChange}>

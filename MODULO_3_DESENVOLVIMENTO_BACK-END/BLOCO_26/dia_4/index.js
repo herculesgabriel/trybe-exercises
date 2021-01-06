@@ -2,6 +2,7 @@ const express = require('express');
 const routeSimpsons = require('./routeSimpsons');
 const app = express();
 
+app.use(express.json());
 app.use('/simpsons', routeSimpsons);
 
 app.use((err, req, res, next) => {

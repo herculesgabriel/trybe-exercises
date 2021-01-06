@@ -1,16 +1,17 @@
 const fs = require('fs');
 
-console.time('read all files');
+const startScript = Date.now();
 
-console.time('read file 1');
-const textFile1 = fs.readFileSync('file1.txt');
-console.timeEnd('read file 1');
+const startFile1 = Date.now();
+const file1 = fs.readFileSync('./file1.txt');
+const timeFile1 = Date.now() - startFile1;
 
-console.time('read file 2');
-const textFile2 = fs.readFileSync('file2.txt');
-console.timeEnd('read file 2');
+const startFile2 = Date.now();
+const file2 = fs.readFileSync('./file2.txt');
+const timeFile2 = Date.now() - startFile2;
 
-console.log(textFile1.byteLength);
-console.log(textFile2.byteLength);
+const timeScript = Date.now() - startScript;
 
-console.timeEnd('read all files');
+console.log(`file1.txt: lidos ${file1.byteLength} bytes em ${timeFile1} milissegundos`);
+console.log(`file2.txt: lidos ${file2.byteLength} bytes em ${timeFile2} milissegundos`);
+console.log(`script concluído em ${timeScript} milissegundos`);

@@ -1,12 +1,14 @@
 const express = require('express');
 const routeSimpsons = require('./routeSimpsons');
-const auth = require('./auth');
+const routeSignUp = require('./routeSignUp');
+const authMiddleware = require('./authMiddleware');
 
 const app = express();
 
 app.use(express.json());
 
-app.use('/simpsons', auth, routeSimpsons);
+app.use('/simpsons', authMiddleware, routeSimpsons);
+app.use('/signup', routeSignUp);
 
 app.get('*', (req, res) => res.status(404).send('Not found'));
 

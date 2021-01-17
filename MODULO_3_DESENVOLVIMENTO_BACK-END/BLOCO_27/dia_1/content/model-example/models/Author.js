@@ -27,12 +27,19 @@ const serialize = (authorData) => ({
   lastName: authorData.last_name,
 });
 
+// busca todos os autores do banco
+
 const getAll = async () => {
   const [authors] = await connection.execute(
     'SELECT id, first_name, middle_name, last_name FROM model_example.authors;'
   );
   return authors.map(serialize).map(getNewAuthor);
 };
+
+/**
+ * Busca um autor específico, a partir do seu ID
+ * @param {string} id ID do autor a ser recuperado
+ */
 
 const findById = async (id) => {
   const [authorData] = await connection.execute(
@@ -52,6 +59,8 @@ const findById = async (id) => {
   });
 };
 
+// verifica se as informações necessárias para criação de um autor estão corretas
+
 const isValid = (firstName, middleName, lastName) => {
   if (!firstName || typeof firstName !== 'string') return false;
   if (!lastName || typeof lastName !== 'string') return false;
@@ -59,6 +68,8 @@ const isValid = (firstName, middleName, lastName) => {
 
   return true;
 };
+
+// cria um novo autor no banco de dados
 
 const create = async (firstName, middleName, lastName) => connection.execute(
   'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?,?,?)',

@@ -1,40 +1,77 @@
-const express = require('express');
-const ProductModel = require('../models/productModel');
+const ProductService = require('../services/productService');
 
-const router = express.Router();
+const getAllProducts = async (req, res) => {
+  const products = await ProductService.getAllProducts();
 
-router.get('/list-products', async (req, res, next) => {
-  const products = await ProductModel.getAll();
+  if (products.status === 'error')
+    return res.status(500).send({ message: 'Internal error' });
 
-  res.send(products);
-});
+  res.status(200).json(products);
+};
 
-router.get('/get-by-id/:id', async (req, res, next) => {
-  const product = await ProductModel.getById(req.params.id);
+const getProductById = async (req, res) => {
+  const { id } = req.params;
 
-  res.send(product);
-});
+  const product = await ProductService.getProductById(id);
 
-router.post('/add-user', async (req, res) => {
+  if (product.status === 'not found')
+    return res.status(400).send({ message: 'No products found' });
+
+  if (product.status === 'error')
+    return res.status(500).send({ message: 'Internal error' });
+
+  res.json(product);
+};
+
+const addProduct = async (req, res) => {
   const { name, brand } = req.body;
 
-  const newProduct = await ProductModel.add(name, brand);
+  const createdProduct = await ProductService.addProduct(name, brand);
 
-  res.send(newProduct);
-});
+  if (createdProduct.status === 'invalid data')
+    return res.status(500).send({
+      message: 'Invalid data. You need to provide either a name and a brand'
+    });
 
-router.post('/delete-user/:id', async (req, res) => {
-  const products = await ProductModel.exclude(req.params.id);
+  if (createdProduct.status === 'error')
+    return res.status(500).send({ message: 'Internal error' });
 
-  res.send(products);
-});
+  res.send(createdProduct);
+};
 
-router.post('/update-user/:id', async (req, res) => {
+const updateProduct = async (req, res) => {
   const { name, brand } = req.body;
+  const { id } = req.params;
 
-  const products = await ProductModel.update(req.params.id, name, brand);
+  const updatedProduct = await ProductService.updateProduct(id, name, brand);
 
-  res.send(products);
-});
+  if (updatedProduct.status === 'not found')
+    return res.status(400).send({ message: 'Product not found' });
 
-module.exports = router;
+  if (updatedProduct.status === 'error')
+    return res.status(500).send({ message: 'Internal error' });
+
+  res.send(updatedProduct);
+};
+
+const deleteProduct = async (req, res) => {
+  const { id } = req.params;
+
+  const result = await ProductService.deleteProduct(id);
+
+  if (result.status === 'not found')
+    return res.status(400).send({ message: 'Product not found' });
+
+  if (result.status === 'error')
+    return res.status(500).send({ message: 'Internal error' });
+
+  res.send({ message: 'Product deleted successfully' });
+};
+
+module.exports = {
+  getAllProducts,
+  getProductById,
+  addProduct,
+  deleteProduct,
+  updateProduct,
+};

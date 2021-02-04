@@ -13,4 +13,6 @@ async function calculation(a, b, c) {
   return mul;
 }
 
-console.log(calculation(1, '8', 10));
+calculation(1, '8', 10)
+  .then(res => console.log(res))
+  .catch(err => console.log(err));

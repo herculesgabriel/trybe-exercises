@@ -36,7 +36,6 @@ router.get('/:id', async (req, res) => {
   res.status(200).send({ personagem: character || [] });
 });
 
-
 router.post('/', async (req, res) => {
   const { id, name } = req.body;
   if (!id || !name)

@@ -31,15 +31,17 @@ routes.get('/files/text/:filename', async (req, res) => {
 });
 
 routes.post('/files/text/upload', upload.single('file'), (req, res) => {
-  res.status(200).send('OK');
+  res.status(200).send(req.file?.filename);
 });
 
 routes.post('/files/text', async (req, res) => {
   const { text } = req.body;
 
-  await fs.writeFile(`./uploads/${Date.now()}.txt`, text, { flag: 'wx' });
+  const filename = `${Date.now()}.txt`;
 
-  res.status(200).send('OK');
+  await fs.writeFile(`./uploads/${filename}`, text, { flag: 'wx' });
+
+  res.status(200).send(filename);
 });
 
 module.exports = routes;

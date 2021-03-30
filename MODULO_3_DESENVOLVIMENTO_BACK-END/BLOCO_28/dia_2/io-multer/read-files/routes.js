@@ -1,19 +1,9 @@
 const express = require('express');
-const multer = require('multer');
 const fs = require('fs/promises');
 
+const upload = require('./multer');
+
 const routes = express.Router();
-
-const storage = multer.diskStorage({
-  destination: (req, file, callback) => {
-    callback(null, 'uploads');
-  },
-  filename: (req, file, callback) => {
-    callback(null, file.originalname);
-  },
-});
-
-const upload = multer({ storage });
 
 routes.get('/ping', (req, res) => {
   res.send('pong');

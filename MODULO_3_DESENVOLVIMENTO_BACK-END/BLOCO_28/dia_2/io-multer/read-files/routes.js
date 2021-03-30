@@ -9,7 +9,7 @@ routes.get('/ping', (req, res) => {
   res.send('pong');
 });
 
-routes.get('/files/:filename', async (req, res) => {
+routes.get('/files/text/:filename', async (req, res) => {
   const { filename } = req.params;
 
   if (!filename) {
@@ -30,11 +30,11 @@ routes.get('/files/:filename', async (req, res) => {
   }
 });
 
-routes.post('/files/upload', upload.single('file'), (req, res) => {
+routes.post('/files/text/upload', upload.single('file'), (req, res) => {
   res.status(200).send('OK');
 });
 
-routes.post('/files/text/upload', async (req, res) => {
+routes.post('/files/text', async (req, res) => {
   const { text } = req.body;
 
   await fs.writeFile(`./uploads/${Date.now()}.txt`, text, { flag: 'wx' });

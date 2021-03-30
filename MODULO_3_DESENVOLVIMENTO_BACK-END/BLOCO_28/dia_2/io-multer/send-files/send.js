@@ -20,7 +20,7 @@ form.append('file', stream);
 const formHeaders = form.getHeaders();
 
 axios
-  .post('http://localhost:3000/files/upload', form, {
+  .post('http://localhost:3000/files/text/upload', form, {
     headers: {
       ...formHeaders,
     },

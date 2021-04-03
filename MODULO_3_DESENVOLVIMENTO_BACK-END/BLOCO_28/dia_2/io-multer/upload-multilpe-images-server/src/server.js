@@ -34,4 +34,4 @@ server.post('/images', upload.array('images'), (req, res) => {
   res.status(200).json({ filenames });
 });
 
-server.listen(3333, () => console.log('Server started at port 3333'));
+server.listen(3000, () => console.log('Server started at port 3000'));

@@ -1,0 +1,49 @@
+apps:
+  - name: prod-app
+    script: ./index.js
+    watch: true
+    exec_mode: cluster
+    instances: max
+    max_memory_restart: 100M
+    env_prod:
+      PORT: 5050
+      NODE_ENV: production
+      MESSAGE: 'Funcionou em PROD :)'
+
+  - name: dev-app
+    script: ./index.js
+    watch: true
+    exec_mode: cluster
+    instances: max
+    max_memory_restart: 100M
+    env_dev:
+      PORT: 6060
+      NODE_ENV: production
+      MESSAGE: 'Funcionou em DEV :)'
+    env_prod:
+      PORT: 5050
+      NODE_ENV: production
+      MESSAGE: 'Funcionou em PROD :)'
+    env_homolog:
+      PORT: 8080
+      NODE_ENV: production
+      MESSAGE: 'Funcionou em HOMOLOG :)'
+
+  - name: homolog-app
+    script: ./index.js
+    watch: true
+    exec_mode: cluster
+    instances: max
+    max_memory_restart: 100M
+    env_dev:
+      PORT: 8080
+      NODE_ENV: development
+      MESSAGE: 'Funcionou em HOMOLOG :)'
+    env_prod:
+      PORT: 5050
+      NODE_ENV: production
+      MESSAGE: 'Funcionou em PROD :)'
+    env_homolog:
+      PORT: 8080
+      NODE_ENV: production
+      MESSAGE: 'Funcionou em HOMOLOG :)'

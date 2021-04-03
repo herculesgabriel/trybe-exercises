@@ -1,0 +1,15 @@
+{
+  "name": "exercises",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "pm2 start ecosystem.config.yml --only \"dev-app,homolog-app\" --env dev",
+    "start:homolog": "pm2 start ecosystem.config.yml --only homolog-app --env homolog",
+    "start:prod": "pm2-runtime start ecosystem.config.yml --only prod-app --env prod"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pm2": "^4.5.6"
+  }
+}

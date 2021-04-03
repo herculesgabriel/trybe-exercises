@@ -1,0 +1,13 @@
+{
+  "name": "conteudo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "pm2-runtime start ecosystem.config.yml"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pm2": "^4.5.6"
+  }
+}

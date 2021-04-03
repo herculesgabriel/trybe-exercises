@@ -22,4 +22,4 @@ server.post('/images', upload.single('image'), (req, res) => {
   res.status(200).send(req.file?.filename);
 });
 
-server.listen(3333, () => console.log('Server started at port 3333'));
+server.listen(3000, () => console.log('Server started at port 3000'));

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Autores</title>
+  </head>
+
+  <body>
+    <a href="/authors/new">Criar novo autor</a>
+    <ul>
+      <% authors.forEach((author) => { %>
+      <li><%= author.name %></li>
+      <a href=<%= `/authors/${author.id}` %>>Ver detalhes</a>
+      <%}) %>
+    </ul>
+  </body>
+</html>

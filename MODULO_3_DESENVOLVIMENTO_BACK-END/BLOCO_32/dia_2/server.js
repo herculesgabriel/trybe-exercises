@@ -7,15 +7,11 @@ const server = net.createServer((connection) => {
     console.log(count);
   });
 
-  connection.on('end', () => {
-    console.log('Cliente desconectado');
-
-    server.getConnections((error, count) => {
-      console.log(count);
-    });
+  connection.on('data', (data) => {
+    console.log(data.toString());
   });
 
-  connection.on('close', () => {
+  connection.on('end', () => {
     console.log('Cliente desconectado');
 
     server.getConnections((error, count) => {

@@ -1,0 +1,4 @@
+[DEBUG - 11/07/2021 10:10:03]: O carregamento iniciou...
+[INFO - 11/07/2021 10:10:03]: O carregamento foi concluído.
+[ALERT - 11/07/2021 10:10:03]: Nem todos os dados puderam ser carregados.
+[ERROR - 11/07/2021 10:10:03]: Falha ao cadastrar novo usuário

@@ -1,7 +1,8 @@
 class Deque:
     FIRST_ELEMENT = 0
 
-    def __init__(self) -> None:
+    def __init__(self, maximum_size) -> None:
+        self.maximum_size = maximum_size
         self._data = []
 
     def __len__(self):
@@ -20,10 +21,19 @@ class Deque:
         # return False
         return value in self._data
 
+    def is_full(self):
+        return len(self) == self.maximum_size
+
     def push_front(self, value):
+        if self.is_full():
+            raise Exception("Overflow")
+
         self._data.insert(self.FIRST_ELEMENT, value)
 
     def push_back(self, value):
+        if self.is_full():
+            raise Exception("Overflow")
+
         self._data.append(value)
 
     def pop_front(self):
